@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,12 +127,13 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        About
+                        More
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">hehe</a></li>
-                        <li><a class="dropdown-item" href="#">hehe</a></li>
-                        <li><a class="dropdown-item" href="#">hehe</a></li>
+                    	<li><a class="dropdown-item" href="#">About Us</a></li>
+                        <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                        <li><a class="dropdown-item" href="#">Feedbacks</a></li>
+                        
                     </ul>
                 </li>
 
@@ -474,9 +477,10 @@
         <!--_______________________________________________________________________________________________-->
       </br></br></br></br>
         <h3 class="font-weight-normal text-white">Most Popular Games</h3>
-
+		
+		
         <div class = "gallery-wrap">
-        <!--img src = "images/back.png" --><i class="bi bi-arrow-right-square-fill fs-3 text-primary me-2" id = "backBtn"></i>
+        <!--img src = "images/back.png" --><i class="bi bi-arrow-right-square-fill fs-3 text-dark me-2" id = "backBtn"></i>
   
           <div class = "gallery">
   
@@ -498,12 +502,65 @@
       
           </div>
   
-          <!--img src = "images/next.png" id = "nextBtn"--><i class="bi bi-arrow-left-square-fill fs-3 text-primary me-2"></i>
+          <!--img src = "images/next.png" id = "nextBtn"--><i class="bi bi-arrow-left-square-fill fs-3 text-dark me-2"></i>
       </div> 
 
 
 
 </main>    
+
+
+<footer class = "navbar navbar-expand navbar-dark bg-dark" >
+
+	<div class = "container">
+	
+	<div class = "row">
+	
+		<div class = "col">
+		
+		<ul>
+		<li><a href = "#">Menu</a></li>
+		<li><a href = "#">Store</a></li>
+		<li><a href = "#">News</a></li>
+		<li><a href = "#">Contact Us</a></li>
+		<li><a href = "#">Dev community</a></li>
+		</ul>
+		
+		</div>
+		
+		
+		<div class = "col">
+		
+		<ul>
+		<li><a href = "#">Games</a></li>
+		<li><a href = "#">Fortnite</a></li>
+		<li><a href = "#">Fall Guys</a></li>
+		<li><a href = "#">Valorant</a></li>
+		<li><a href = "#">Minecraft</a></li>
+		</ul>
+		
+		</div>
+		
+		
+		<div class = "col">
+		
+		<ul>
+		<li><a href = "#">privacy policy</a></li>
+		<li><a href = "#">community rules </a></li>
+		<li><a href = "#">safety and security</a></li>
+		</ul>
+		
+		</div>
+	
+	</div>
+	
+	</div>
+
+
+   </footer>
+
+
+
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
       <script>
