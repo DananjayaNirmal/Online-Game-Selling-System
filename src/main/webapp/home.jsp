@@ -17,7 +17,7 @@
 
   <style>
     .carousel-inner img {
-      height: 450px;
+      height: 600px;
       /*object-fit: cover;*/
     }
 
