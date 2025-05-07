@@ -20,5 +20,16 @@
 <jsp:include page="/templates/header.jsp" />
 
 
+
+ddddddddddddddddddddd
+ddddddddddddddddddddd
+ddddddddddddddddddddd
+
+
+
+
+<jsp:include page="/templates/footer.jsp" />
+
+
 </body>
 </html>

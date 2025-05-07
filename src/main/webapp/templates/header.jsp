@@ -68,7 +68,7 @@
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-      <script>
+      <!--script>
     
         let scrollContainer = document.querySelector(".gallery");
         let backBtn = document.getElementById("backBtn");
@@ -91,4 +91,4 @@
            scrollContainer.scrollLeft -= 900;
         });
 
-    </script>  
+    </script-->  
