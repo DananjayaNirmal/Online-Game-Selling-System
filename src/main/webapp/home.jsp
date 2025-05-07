@@ -519,11 +519,11 @@
 		<div class = "col">
 		
 		<ul class = "list-unstyled">
-		<li><a href = "" class = "text-decoration-none text-light">Menu</a></li></br>
+		<li><a href = "" class = "text-decoration-none text-light fs-4">Menu</a></li></br>
 		<li><a href = "" class = "text-decoration-none text-light">Store</a></li>
 		<li><a href = "" class = "text-decoration-none text-light">News</a></li>
-		<li><a href = "" class = "text-decoration-none">Contact Us</a></li>
-		<li><a href = "" class = "text-decoration-none">Dev community</a></li>
+		<li><a href = "" class = "text-decoration-none text-light">Contact Us</a></li>
+		<li><a href = "" class = "text-decoration-none text-light">Dev community</a></li>
 		</ul>
 		
 		</div>
@@ -532,11 +532,11 @@
 		<div class = "col">
 		
 		<ul class = "list-unstyled">
-		<li><a href = "" class = "text-decoration-none text-light">Games</a></li>
+		<li><a href = "" class = "text-decoration-none text-light fs-4">Games</a></li></br>
 		<li><a href = "" class = "text-decoration-none text-light">Fortnite</a></li>
-		<li><a href = "" class = "text-decoration-none">Fall Guys</a></li>
-		<li><a href = "" class = "text-decoration-none">Valorant</a></li>
-		<li><a href = "" class = "text-decoration-none">Minecraft</a></li>
+		<li><a href = "" class = "text-decoration-none text-light">Fall Guys</a></li>
+		<li><a href = "" class = "text-decoration-none text-light">Valorant</a></li>
+		<li><a href = "" class = "text-decoration-none text-light">Minecraft</a></li>
 		</ul>
 		
 		</div>
@@ -545,17 +545,23 @@
 		<div class = "col">
 		
 		<ul class = "list-unstyled">
-		<li><a href = "" class = "text-decoration-none">privacy policy</a></li>
-		<li><a href = "" class = "text-decoration-none">community rules </a></li>
-		<li><a href = "" class = "text-decoration-none">safety and security</a></li>
+		<li><a href = "" class = "text-decoration-none text-light fs-4">Read</a></li></br>
+		<li><a href = "" class = "text-decoration-none text-light">privacy policy</a></li>
+		<li><a href = "" class = "text-decoration-none text-light">community rules </a></li>
+		<li><a href = "" class = "text-decoration-none text-light">safety and security</a></li>
 		</ul>
 		
 		</div>
 	
 	</div>
-	
+	<hr>
+	<p class="text-light fs-6">
+  	© 2025 danadana. All rights reserved.
+	</p>
+
 	</div>
 
+	
 
    </footer>
 
