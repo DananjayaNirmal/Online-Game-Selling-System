@@ -21,11 +21,7 @@
 
 
 
-ddddddddddddddddddddd
-ddddddddddddddddddddd
-ddddddddddddddddddddd
-
-
+SENUMI DIYANA
 
 
 <jsp:include page="/templates/footer.jsp" />
