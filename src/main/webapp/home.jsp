@@ -199,7 +199,7 @@
     
         </div>
       
-        <div style = "position: absolute; left: 75%; top:70%; color:white;">
+        <div style = "position: absolute; left: 75%; top:100%; color:white;">
 
             <h1 ><span><s style="color: gray;">50$</s></span>&nbsp;25$</h1>
             <button class = "btn btn-light btn-lg">Play Now</button>
