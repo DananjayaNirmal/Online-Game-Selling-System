@@ -17,31 +17,65 @@
 </head>
 <body>
 
-<jsp:include page="/templates/header.jsp" />
+
+<jsp:include page="/templates/adminHeaderMain.jsp"/>
+
+<jsp:include page="/templates/subHeaderAdmin.jsp"/>
 
 
 
-<main>
+<main class = "container" style = "margin-bottom:100px; margin-top:100px;">
 
-		<div>
-		
-			<>		
+	<div class = "row">
+		<div class = "col p-5 m-2 text-center rounded bg-secondary">
+			
+			7	 
 			
 		</div>
 		
-		<div>
+		<div class = "col bg-secondary p-5 m-2 text-center rounded">
+		
+			7
+		
 		</div>
 		
-		<div>
+		<div class = "col bg-secondary p-5 m-2 text-center rounded">
+		
+			7
+			
 		</div>
 		
-		<div>
+		<!--div class = "col bg-secondary p-5 m-2 text-center rounded">
+		</div-->
+	<div>
+	<br>
+	<div class = "row">
+		<div class = "col bg-secondary p-5 m-2 text-center rounded">
+			
+			9	 
+			
 		</div>
+		
+		<div class = "col bg-secondary p-5 m-2 text-center rounded">
+		
+			9	
+				
+		</div>
+		
+		<div class = "col bg-secondary p-5 m-2 text-center rounded">
+		
+			9
+			
+		</div>
+		
+		<!--div class = "col bg-secondary p-5 m-2 rounded">
+		</div-->
+	<div>		
 
 </main>
 
 
-<jsp:include page="/templates/footer.jsp" />
+<jsp:include page="/templates/footerAdmin.jsp"/>
 
 
 </body>

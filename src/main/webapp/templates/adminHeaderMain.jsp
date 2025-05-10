@@ -5,7 +5,7 @@
 
             <a href = "#" class="navbar-brand">GAME ZONE <i class="bi bi-fire"></i></a>
 
-            <ul class="navbar-nav">
+            <!--ul class="navbar-nav">
                 
                 <li class="nav-item">
                     <a href = "#" class="nav-link">Home</a>
@@ -26,7 +26,7 @@
 
                 <!----------------------------------------------->
 
-                <li class="nav-item dropdown">
+                <!--li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         About
                     </a>
@@ -35,12 +35,12 @@
                         <li><a class="dropdown-item" href="#">hehe</a></li>
                         <li><a class="dropdown-item" href="#">hehe</a></li>
                     </ul>
-                </li>
+                </li-->
 
                 <!----------------------------------------------->
                 
 
-            </ul>
+            <!--/ul-->
 
 
             <div class="navbar-text">
