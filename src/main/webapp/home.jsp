@@ -102,7 +102,7 @@
         
         <div class = "container">
 
-            <a href = "#" class="navbar-brand">ddddddd</a>
+            <a href = "#" class="navbar-brand">GAME ZONE <i class="bi bi-fire"></i></a>
 
             <ul class="navbar-nav">
                 
