@@ -4,35 +4,35 @@
         <div class = "container">
 
 
-            <ul class="navbar-nav row-7 w-100">
+            <ul class="navbar-nav row-6 w-100">
                 
                 <li class="nav-item col me-2">
-                    <a href = "#" class="nav-link text-light">Home</a>
+                    <a href = "#" class="nav-link text-light">Dashboard</a>
                 </li>
 
                 <li class="nav-item me-2 col">
-                    <a href = "#" class="nav-link text-light">Store</a>
+                    <a href = "#" class="nav-link text-light">Manage Users</a>
                 </li>
 
 
                 <li class="nav-item me-2 col">
-                    <a href = "#" class="nav-link text-light">News</a>
+                    <a href = "#" class="nav-link text-light">Manage Games</a>
                 </li>
 
                 <li class="nav-item me-2 col">
-                    <a href = "#" class="nav-link text-light">About</a>
+                    <a href = "#" class="nav-link text-light">Feedbacks</a>
                 </li>
 				
 				<li class="nav-item me-2 col"> 
-                    <a href = "#" class="nav-link text-light">About</a>
+                    <a href = "#" class="nav-link text-light">Add Post</a>
                 </li>
                 
-                <li class="nav-item me-2 col">
+                <!--li class="nav-item me-2 col">
                     <a href = "#" class="nav-link text-light">About</a>
-                </li>
+                </li-->
                 
                 <li class="nav-item me-2 col">
-                    <a href = "#" class="nav-link text-light">About</a>
+                    <a href = "#" class="nav-link text-light">Edit profile</a>
                 </li>
             </ul>
 

@@ -3,7 +3,7 @@
         
         <div class = "container">
 
-            <a href = "#" class="navbar-brand">GAME ZONE <i class="bi bi-fire"></i></a>
+            <a href = "../home.jsp" class="navbar-brand">GAME ZONE <i class="bi bi-fire"></i></a>
 
             <!--ul class="navbar-nav">
                 
