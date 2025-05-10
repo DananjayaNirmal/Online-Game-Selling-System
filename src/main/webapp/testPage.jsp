@@ -21,7 +21,7 @@
 
 
 
-SENUMI DIYANA
+APSP
 
 
 <jsp:include page="/templates/footer.jsp" />
