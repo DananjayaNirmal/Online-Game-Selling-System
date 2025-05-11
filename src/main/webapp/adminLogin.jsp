@@ -12,8 +12,16 @@
 </head>
 <body>
 
-	<div class = "container mt-5">
-	<form class = "w-25 mx-auto" action = "sampleLogin " method = "post">
+	<main class = "container" style = "margin-top:100px;">
+	
+	<div>
+		<p>This is a sample log in</p>
+		<p>should be Replaced with actual log in</p>
+		<p>Created by Dana</p>
+	</div>
+	
+	<div>
+	<form class = "w-25 mx-auto" action = "adminLogin">
 	
 		<div class = "form-outline mb-4">
 			<label class = "form-label">User Name</label>
@@ -27,12 +35,15 @@
 			 "upass" placeholder = "password">
 		</div>
 		
-		<input type = "submit" class = "btn btn-primary" value =
+		<input type = "submit" class = "btn btn-secondary" value =
 		"Login">
 	
 	</form>
-	
 	</div>
+	
+	
+	
+	</main>
 	
 </body>
 </html>
