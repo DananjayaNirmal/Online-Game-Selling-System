@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,8 +27,51 @@
 
 
 
-<main class = "container" style = "margin-bottom:100px; margin-top:100px;">
+<main class = "container" style = "margin-bottom:100px; margin-top:100px; background-color:gray;">
 
+	
+	<div>
+	
+		<table class="table mt-2">
+				<thead class="table-light">
+					<tr>
+						<th>Cover image</th>
+						<th>Game Id</th>
+						<th>title</th>
+						<!--th></th-->
+						
+					</tr>
+				</thead>
+				<tbody>
+				
+					<c:forEach var = "game" items = "${gList}" >
+						<tr>
+						
+						
+							<div>
+					            <p>ID: ${game.id}</p>
+					            <p>Title: ${game.title}</p>
+					            <p>Status: ${game.status}</p>
+					            <!--img src="${game.imagePath}" alt="Game Image" style="width:100px;" /-->
+					        </div>
+						
+							<!--td><c:out value="${pts.imagePath }"></c:out></td>
+							<td><c:out value="${pts.id }"></c:out></td>
+							<td><c:out value="${pts.title }"></c:out></td>
+		
+							<td>
+								<a href="update?id=" class="btn bg-transparent btn-sm">Approve</a>
+								<a href="delete?id=" class="btn bg-transparent btn-sm text-success">Reject</a>
+								<a href="delete?id=" class="btn btn-secondary btn-sm">Update</a>
+							</td-->
+							
+						</tr>
+					</c:forEach>
+					
+				</tbody>
+			</table>
+	
+	</div>
 	
 
 </main>
