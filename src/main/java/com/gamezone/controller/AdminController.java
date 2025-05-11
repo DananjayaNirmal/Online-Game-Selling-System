@@ -17,7 +17,7 @@ import com.gamezone.model.Game;
 
 //@WebServlet("/")
 
-@WebServlet({"manageGames", "sampleLogin"})
+@WebServlet({"/manageGames", "/sampleLogin"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -34,10 +34,10 @@ public class AdminController extends HttpServlet {
 		
 		switch(spath) {
 			
-		case "manageGames":
+		case "/manageGames":
 		showSubmittedGames(request, response);	
 		
-		case "sampleLogin":
+		case "/sampleLogin":
 			System.out.println("Login clicked" + spath);
 			checkLogin(request, response);
 			break;
