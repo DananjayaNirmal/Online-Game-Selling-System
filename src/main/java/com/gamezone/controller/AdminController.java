@@ -17,7 +17,7 @@ import com.gamezone.model.Game;
 
 //@WebServlet("/")
 
-@WebServlet({"/", "/manageGames"})
+@WebServlet({"manageGames", "sampleLogin"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -34,8 +34,13 @@ public class AdminController extends HttpServlet {
 		
 		switch(spath) {
 			
-		case "/manageGames":
+		case "manageGames":
 		showSubmittedGames(request, response);	
+		
+		case "sampleLogin":
+			System.out.println("Login clicked" + spath);
+			checkLogin(request, response);
+			break;
 			
 		}
 		
@@ -53,6 +58,29 @@ public class AdminController extends HttpServlet {
 		request.setAttribute("gList", gameList);
 		RequestDispatcher rd = request.getRequestDispatcher("manageGames.jsp");
 		rd.forward(request, response);
+		
+	}
+	
+	
+	
+	private void checkLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String un = request.getParameter("uname");
+		String up = request.getParameter("upass");
+		
+		System.out.println(un);
+		AdminDAO dao = new AdminDAO();
+		
+		if(dao.checkUser(un, up)) {
+			
+			System.out.println("Login success");
+			response.sendRedirect("manageGames");
+			
+		}else {
+			
+			System.out.println("Login failed");
+			response.sendRedirect("sampleLogin.jsp");
+			
+		}
 		
 	}
 

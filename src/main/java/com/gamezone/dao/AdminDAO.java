@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.gamezone.util.DBConnection;
-import java.sql.SQLException;
-
 import com.gamezone.model.Game;
 
 public class AdminDAO {
@@ -44,4 +42,26 @@ public class AdminDAO {
 			return gameList;
 	}
 
+	
+	public boolean checkUser(String un, String up) {
+		
+		//System.out.println(un + up);
+	    String query = "SELECT * FROM user WHERE un = ? AND pw = ?";
+	    
+	    try (Connection con = DBConnection.getConnection();
+	         PreparedStatement ps = con.prepareStatement(query)) {
+	        
+	        ps.setString(1, un);
+	        ps.setString(2, up);
+	        try (ResultSet rs = ps.executeQuery()) {
+	            return rs.next();
+	        }
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    
+	    return false;
+	}
+	
 }
