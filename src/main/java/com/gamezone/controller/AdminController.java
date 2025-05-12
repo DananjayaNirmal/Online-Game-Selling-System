@@ -70,8 +70,8 @@ public class AdminController extends HttpServlet {
 		
 		User usr = new User(userName, email, phoneNo, password, roll, age, gender);
 		dao.insertUser(usr);
-		System.out.println("patient added to system");
-		//response.sendRedirect("./manageUsers.jsp");
+		System.out.println("User added to system");
+		response.sendRedirect("./manageUsers");
 		
 	}
 
