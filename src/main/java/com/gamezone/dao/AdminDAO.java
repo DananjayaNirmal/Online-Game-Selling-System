@@ -6,8 +6,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 //import java.util.ArrayList;
 //import java.util.List;
+import java.util.List;
+
+import com.gamezone.model.User;
 
 //import com.gamezone.util.DBConnection;
 //import com.gamezone.model.Game;
@@ -80,6 +84,41 @@ public class AdminDAO {
 
 	    return false;
 	
+	}
+
+
+	public List<User> getAllUsers() {
+		
+		List<User> userList = new ArrayList<>();
+		Connection con = dbConnection();
+		
+		String query = "Select * From UserDetails";
+		
+		try {
+			PreparedStatement ps = con.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				int userID = rs.getInt("userID");
+				String userName = rs.getString("userName");
+				String email = rs.getString("email");
+				int phoneNo = rs.getInt("phoneNumber");
+				String password = rs.getString("password");
+				String roll = rs.getString("roll");
+				
+				
+				userList.add(new User(userID, userName, email, phoneNo, password, roll));
+			}
+			
+		}catch(Exception e){
+			
+			e.printStackTrace();
+			
+		}
+		
+		return userList;
+		
 	}
 
 	

@@ -1,3 +1,5 @@
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,7 +28,71 @@
 
 <main class = "container" style = "margin-bottom:100px; margin-top:100px;">
 
+	<div>
 	
+		<a href="addUser" class="btn btn-success btn-sm"><i class="bi bi-person-plus-fill"></i> New User</a>
+		
+	</div>
+	
+	<div>
+	
+		<table class="table mt-2">
+				<thead class="table-transparent">
+					<tr>
+						<th>User ID</th>
+						<th>User Name</th>
+						<th>E-mail</th>
+						<th>Phone No</th>
+						<!--th>Age</th-->
+						<th>Roll</th>
+						<th>Password</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+				
+				
+					<tr>
+						
+							<td>1001</td>
+							<td>Dananjaya</td>
+							<td>dana@gmail.com</td>
+							<td>947027000</td>
+							<!--td>22</td-->
+							<td>Admin</td>
+							<td>1dajkdhkaljdla;kda;lakd;lak</td>
+							<td>
+								<a href="" class="btn btn-transparent btn-sm"><i class="bi bi-pencil-square fs-5" style = "color:gray;"></i></a>
+								<a href="" class="btn btn-transparent btn-sm"><i class="bi bi-person-x-fill fs-5" style = "color:red;"></i></a>
+							</td>
+							
+						</tr>
+				
+					<c:forEach var="usr" items="${usr}"> 
+						<tr>
+						
+							<td><c:out value="${usr.userID }"></c:out></td>
+							<td><c:out value="${usr.userName }"></c:out></td>
+							<td><c:out value="${usr.email }"></c:out></td>
+							<td><c:out value="${usr.phoneNo }"></c:out></td>
+							<td><c:out value="${usr.roll }"></c:out></td>
+							<td><c:out value="${usr.password }"></c:out></td>
+							<td>
+								<!--a href="update?id=<c:out value='${pts.id }'/>" class="btn btn-success btn-sm">Edit</a>
+								<a href="delete?id=<c:out value='${pts.id }'/>" class="btn btn-danger btn-sm">Delete</a-->
+								
+								<a href="" class="btn btn-transparent btn-sm"><i class="bi bi-pencil-square fs-5" style = "color:gray;"></i></a>
+								<a href="" class="btn btn-transparent btn-sm"><i class="bi bi-person-x-fill fs-5" style = "color:red;"></i></a>
+								
+							</td>
+							
+						</tr>
+					</c:forEach>
+					
+				</tbody>
+			</table>
+		
+	</div>
 
 </main>
 

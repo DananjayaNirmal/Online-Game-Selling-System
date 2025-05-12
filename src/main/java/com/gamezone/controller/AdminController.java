@@ -1,6 +1,9 @@
 package com.gamezone.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,10 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.gamezone.dao.AdminDAO;
+import com.gamezone.model.User;
+
+import javax.servlet.RequestDispatcher;
 
 //@WebServlet("/")
 
-@WebServlet(urlPatterns = {"/adminLogin", "/manageGames", "/adminDashboard"})
+@WebServlet(urlPatterns = {"/adminLogin", "/manageUsers", "/manageGames", "/adminDashboard"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -34,8 +40,26 @@ public class AdminController extends HttpServlet {
 					break;
 					
 					
+				case "/manageUsers":
+					showManageUsers(request, response);
+					break;	
+					
 				}
 			}
+
+	private void showManageUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			
+				List<User> userList = new ArrayList<>();
+				
+				userList = dao.getAllUsers();
+				
+				System.out.println("Dana" + userList);
+				
+				request.setAttribute("usr", userList);
+				RequestDispatcher rd = request.getRequestDispatcher("manageUsers.jsp");
+				rd.forward(request, response);
+		
+	}
 
 	private void showAdminDashboard(HttpServletRequest request, HttpServletResponse response) {
 		
