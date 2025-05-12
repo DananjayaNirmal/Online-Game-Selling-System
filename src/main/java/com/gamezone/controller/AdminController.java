@@ -19,7 +19,7 @@ import javax.servlet.RequestDispatcher;
 
 //@WebServlet("/")
 
-@WebServlet(urlPatterns = {"/adminLogin", "/manageUsers", "/admin/addNewUser", "/manageGames", "/adminDashboard"})
+@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/manageUsers", "/admin/addNewUser", "/admin/manageGames", "/admin/adminDashboard"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -32,17 +32,17 @@ public class AdminController extends HttpServlet {
 				
 				switch(act) {
 				
-				case "/adminLogin":
+				case "/admin/adminLogin":
 					System.out.println("Login clicked" + act);
 					checkLogin(request, response);
 					break;
 					
-				case "/adminDashboard":
+				case "/admin/adminDashboard":
 					showAdminDashboard(request, response);
 					break;
 					
 					
-				case "/manageUsers":
+				case "/admin/manageUsers":
 					showManageUsers(request, response);
 					break;
 					
