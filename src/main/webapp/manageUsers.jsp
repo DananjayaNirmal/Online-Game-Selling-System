@@ -30,7 +30,7 @@
 
 	<div>
 	
-		<a href="addUser" class="btn btn-success btn-sm"><i class="bi bi-person-plus-fill"></i> New User</a>
+		<a href="admin/addNewUser.jsp" class="btn btn-success btn-sm"><i class="bi bi-person-plus-fill"></i> New User</a>
 		
 	</div>
 	
@@ -60,7 +60,7 @@
 							<td>947027000</td>
 							<!--td>22</td-->
 							<td>Admin</td>
-							<td>1dajkdhkaljdla;kda;lakd;lak</td>
+							<td>123456789</td>
 							<td>
 								<a href="" class="btn btn-transparent btn-sm"><i class="bi bi-pencil-square fs-5" style = "color:gray;"></i></a>
 								<a href="" class="btn btn-transparent btn-sm"><i class="bi bi-person-x-fill fs-5" style = "color:red;"></i></a>

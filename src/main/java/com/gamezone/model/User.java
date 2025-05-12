@@ -9,7 +9,10 @@ public class User {
 	private String password;
 	private String roll;
 	
-	public User(int userId, String userName, String email, int phoneNo, String password, String roll) {
+	private int age;
+	private String gender;
+	
+	public User(int userId, String userName, String email, int phoneNo, String password, String roll, int age, String gender) {
 		super();
 		this.userID = userId;
 		this.userName = userName;
@@ -17,22 +20,42 @@ public class User {
 		this.phoneNo = phoneNo;
 		this.password = password;
 		this.roll = roll;
+		this.age = age;
+		this.gender = gender;
 	}
 
-	public User(String userName, String email, int phoneNo, String password, String roll) {
+	public User(String userName, String email, int phoneNo, String password, String roll, int age, String gender) {
 		super();
 		this.userName = userName;
 		this.email = email;
 		this.phoneNo = phoneNo;
 		this.password = password;
 		this.roll = roll;
+		this.age = age;
+		this.gender = gender;
 	}
 	
+
+	public int getAge() {
+		return age;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
 	@Override
 	public String toString() {
 		return "User [userID=" + userID + ", userName=" + userName + ", email=" + email + ", phoneNo=" + phoneNo
-				+ ", password=" + password + ", roll=" + roll + "]";
+				+ ", password=" + password + ", roll=" + roll + ", age=" + age + ", gender=" + gender + "]";
 	}
 
 	public int getUserID() {

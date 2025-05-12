@@ -106,9 +106,10 @@ public class AdminDAO {
 				int phoneNo = rs.getInt("phoneNumber");
 				String password = rs.getString("password");
 				String roll = rs.getString("roll");
+				int age = rs.getInt("age");
+				String gender = rs.getString("gender");
 				
-				
-				userList.add(new User(userID, userName, email, phoneNo, password, roll));
+				userList.add(new User(userID, userName, email, phoneNo, password, roll, age, gender));
 			}
 			
 		}catch(Exception e){
@@ -118,6 +119,26 @@ public class AdminDAO {
 		}
 		
 		return userList;
+		
+	}
+
+
+	public void insertUser(User usr) {
+		
+		try (Connection con = dbConnection()) {
+	        String sql = "INSERT INTO userDetails(userName, email, age, gender, phoneNumber, password, roll) VALUES (?, ?, ?, ?, ?, ?, ?)";
+	        PreparedStatement ps = con.prepareStatement(sql);
+	        ps.setString(1, usr.getUserName());
+	        ps.setString(2, usr.getEmail());
+	        ps.setInt(3, usr.getAge());
+	        ps.setString(4, usr.getGender());
+	        ps.setInt(5, usr.getPhoneNo());
+	        ps.setString(6, usr.getPassword());
+	        ps.setString(7, usr.getRoll());
+	        ps.executeUpdate();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 		
 	}
 

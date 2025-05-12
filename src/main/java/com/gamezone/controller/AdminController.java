@@ -1,6 +1,7 @@
 package com.gamezone.controller;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.gamezone.dao.AdminDAO;
 import com.gamezone.model.User;
 
+
 import javax.servlet.RequestDispatcher;
 
 //@WebServlet("/")
 
-@WebServlet(urlPatterns = {"/adminLogin", "/manageUsers", "/manageGames", "/adminDashboard"})
+@WebServlet(urlPatterns = {"/adminLogin", "/manageUsers", "/admin/addNewUser", "/manageGames", "/adminDashboard"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -42,10 +44,36 @@ public class AdminController extends HttpServlet {
 					
 				case "/manageUsers":
 					showManageUsers(request, response);
+					break;
+					
+				case "/admin/addNewUser" :
+					addNewUser(request, response);
 					break;	
+					
+						
 					
 				}
 			}
+
+	private void addNewUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		String userName = request.getParameter("uname");
+		String email = request.getParameter("uemail");
+		int phoneNo = Integer.parseInt(request.getParameter("phoneno"));
+		String password = request.getParameter("upass");
+		String roll = request.getParameter("roll");
+		int age = Integer.parseInt(request.getParameter("uage"));
+		String gender = request.getParameter("ugender");
+		
+		
+		System.out.println("this is the name: " + userName);
+		
+		User usr = new User(userName, email, phoneNo, password, roll, age, gender);
+		dao.insertUser(usr);
+		System.out.println("patient added to system");
+		//response.sendRedirect("./manageUsers.jsp");
+		
+	}
 
 	private void showManageUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
