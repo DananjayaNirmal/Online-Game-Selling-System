@@ -51,13 +51,13 @@
 				<tbody>
 				
 				
-					<tr>
+					<!--tr>
 						
 							<td>1001</td>
 							<td>Dananjaya</td>
 							<td>dana@gmail.com</td>
 							<td>947027000</td>
-							<!--td>22</td-->
+							<td>22</td>
 							<td>Admin</td>
 							<td>123456789</td>
 							<td>
@@ -65,7 +65,7 @@
 								<a href="" class="btn btn-transparent btn-sm"><i class="bi bi-person-x-fill fs-5" style = "color:red;"></i></a>
 							</td>
 							
-						</tr>
+						</tr-->
 				
 					<c:forEach var="usr" items="${usr}"> 
 						<tr>
@@ -80,8 +80,8 @@
 								<!--a href="update?id=<c:out value='${pts.id }'/>" class="btn btn-success btn-sm">Edit</a>
 								<a href="delete?id=<c:out value='${pts.id }'/>" class="btn btn-danger btn-sm">Delete</a-->
 								
-								<a href="" class="btn btn-transparent btn-sm"><i class="bi bi-pencil-square fs-5" style = "color:gray;"></i></a>
-								<a href="" class="btn btn-transparent btn-sm"><i class="bi bi-person-x-fill fs-5" style = "color:red;"></i></a>
+								<a href="updateUser?id=<c:out value='${usr.userID}'/>" class="btn btn-transparent btn-sm"><i class="bi bi-pencil-square fs-5" style = "color:gray;"></i></a>
+								<a href="deleteUser?id=<c:out value='${usr.userID}'/>" class="btn btn-transparent btn-sm"><i class="bi bi-person-x-fill fs-5" style = "color:red;"></i></a>
 								
 							</td>
 							

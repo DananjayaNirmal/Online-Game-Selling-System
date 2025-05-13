@@ -22,7 +22,7 @@
 </head>
 <body>
 
-    <footer class = "bg-dark text-light py-5" >
+    <footer class = "text-light py-5" style = "background-color:#100f14" >
 
 	<div class = "container">
 	
@@ -68,7 +68,7 @@
 	</div>
 	<hr>
 	<p class="text-light fs-6">
-  	© 2025 danadana. All rights reserved.
+  	© 2025 GameZone. All rights reserved.
 	</p>
 
 	</div>

@@ -2,6 +2,7 @@ package com.gamezone.controller;
 
 import java.io.IOException;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ import javax.servlet.RequestDispatcher;
 
 //@WebServlet("/")
 
-@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/manageUsers", "/admin/addNewUser", "/admin/manageGames", "/admin/adminDashboard"})
+@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/manageUsers", "/admin/addNewUser", "/admin/updateUser","/admin/deleteUser", "/admin/manageGames", "/admin/adminDashboard"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -49,11 +50,35 @@ public class AdminController extends HttpServlet {
 				case "/admin/addNewUser" :
 					addNewUser(request, response);
 					break;	
+				
+				case "/admin/updateUser":
+					showUpdateForm(request, response);
+					break;	
+					
+				case "/admin/deleteUser":
+					deleteUser(request, response);
+					break;	
 					
 						
 					
 				}
 			}
+
+	private void deleteUser(HttpServletRequest request, HttpServletResponse response) {
+		 
+		
+	}
+	
+
+	private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) {
+		
+		int id = Integer.parseInt(request.getParameter("id"));
+		
+		User oldUser = dao.selectCurrentUser(id);
+		 
+		
+	}
+	
 
 	private void addNewUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
@@ -66,7 +91,7 @@ public class AdminController extends HttpServlet {
 		String gender = request.getParameter("ugender");
 		
 		
-		System.out.println("this is the name: " + userName);
+		//System.out.println("this is the name: " + userName);
 		
 		User usr = new User(userName, email, phoneNo, password, roll, age, gender);
 		dao.insertUser(usr);
@@ -100,8 +125,8 @@ public class AdminController extends HttpServlet {
 		String un = request.getParameter("uname");
 		String up = request.getParameter("upass");
 		
-		System.out.println(un);
-		System.out.println(un);
+		//System.out.println(un);
+		//System.out.println(un);
 		
 		if(dao.checkAdmin(un, up)) {
 			

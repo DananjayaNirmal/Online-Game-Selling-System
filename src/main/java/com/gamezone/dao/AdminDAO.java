@@ -126,7 +126,8 @@ public class AdminDAO {
 	public void insertUser(User usr) {
 		
 		try (Connection con = dbConnection()) {
-	        String sql = "INSERT INTO userDetails(userName, email, age, gender, phoneNumber, password, roll) VALUES (?, ?, ?, ?, ?, ?, ?)";
+	        String sql = "INSERT INTO userDetails(userName, email, age, gender, phoneNumber, password, roll) VALUES"
+	        		+ " (?, ?, ?, ?, ?, ?, ?)";
 	        PreparedStatement ps = con.prepareStatement(sql);
 	        ps.setString(1, usr.getUserName());
 	        ps.setString(2, usr.getEmail());
@@ -140,6 +141,44 @@ public class AdminDAO {
 	        e.printStackTrace();
 	    }
 		
+	}
+
+
+	public User selectCurrentUser(int id) {
+		
+		Connection con = dbConnection();
+		
+		User currentUser = null;
+		
+		try {
+			String sql = "Select * from user where id = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1,id);
+			
+			//print ps
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				String name = rs.getString("userName");
+				String email = rs.getString("email");
+				int age = rs.getInt("age");
+				String gender = rs.getString("gender");
+				int phoneNumber = rs.getInt("phoneNumber");
+				String password = rs.getString("password");
+				String roll = rs.getString("roll");
+				
+				//currentUser = new User(id, name, email,age, gender, phoneNumber, password, roll);
+				
+			}
+			
+			
+		}catch(Exception e) {
+			 
+		}
+		
+		return currentUser;
 	}
 
 	

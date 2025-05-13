@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
 </head>
-<body>
+<body style = "background-color:#131313;">
 
 
 <jsp:include page="/templates/adminHeaderMain.jsp"/>
@@ -30,21 +30,21 @@
 <main class = "container" style = "margin-bottom:100px; margin-top:100px;">
 
 	<div class = "row">
-		<div class = "col p-5 m-2 text-center rounded bg-secondary">
+		<div class = "col p-5 m-2 text-center rounded" style = "background-color:#1a1a1a; color:white;">
 			
-			7	 
+			<i class="bi bi-people-fill"></i><p> 7</p>	 
 			
 		</div>
 		
-		<div class = "col bg-secondary p-5 m-2 text-center rounded">
+		<div class = "col p-5 m-2 text-center rounded" style = "background-color:#1a1a1a; color:white;">
 		
-			7
+			<i class="bi bi-controller"></i><p>7</p>
 		
 		</div>
 		
-		<div class = "col bg-secondary p-5 m-2 text-center rounded">
+		<div class = "col p-5 m-2 text-center rounded" style = "background-color:#1a1a1a; color:white;">
 		
-			7
+			<i class="bi bi-chat-dots-fill"></i><p>7</p>
 			
 		</div>
 		
@@ -53,27 +53,29 @@
 	<div>
 	<br>
 	<div class = "row">
-		<div class = "col bg-secondary p-5 m-2 text-center rounded">
+		<div class = "col p-5 m-2 text-center rounded" style = "background-color:#1a1a1a; color:blue;">
 			
-			9	 
+			<p class = "text-primary">Total Users</p>	 
 			
 		</div>
 		
-		<div class = "col bg-secondary p-5 m-2 text-center rounded">
+		<div class = "col p-5 m-2 text-center rounded" style = "background-color:#1a1a1a; color:blue;">
 		
-			9	
-				
+			<p class = "text-primary">Total Games</p>	 
+			
 		</div>
 		
-		<div class = "col bg-secondary p-5 m-2 text-center rounded">
+		<div class = "col p-5 m-2 text-center rounded" style = "background-color:#1a1a1a; color:blue;">
 		
-			9
+			<p class = "text-primary">Total Engagements</p>	 
 			
 		</div>
 		
 		<!--div class = "col bg-secondary p-5 m-2 rounded">
 		</div-->
 	<div>		
+	
+	
 
 </main>
 

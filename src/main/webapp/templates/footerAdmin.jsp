@@ -66,9 +66,9 @@
 		</div>
 	
 	</div-->
-	<hr>
-	<p class="text-light text-center">
-  	© 2025 danadana. All rights reserved.
+	
+	<p class="text-light text-center mt-2">
+  	© 2025 GameZone. All rights reserved.
 	</p>
 
 	<!--/div-->

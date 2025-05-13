@@ -1,5 +1,5 @@
 
-<nav class = "navbar navbar-expand navbar-dark" style = "background-color:#2a2d32;">
+<nav class = "navbar navbar-expand navbar-dark" style = "background-color:#1a1a1a;">
         
         <div class = "container">
 
