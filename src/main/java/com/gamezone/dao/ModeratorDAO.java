@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gamezone.model.Feedbacks;
 import com.gamezone.model.News;
 import com.gamezone.model.User;
 
@@ -82,6 +83,32 @@ public class ModeratorDAO {
 
 	    return nl;
 		
+		
+	}
+
+	public List<Feedbacks> getFeedbacks() {
+
+		List<Feedbacks> flist = new ArrayList<>();
+		
+		String query = "SELECT * FROM feedbacks";
+
+	    try (Connection con = dbConnection()) {
+	        Statement stmt = con.createStatement();
+	        ResultSet rs = stmt.executeQuery(query);
+
+	        while (rs.next()) {
+	            int feedbackId = rs.getInt("feedbackId");
+	            String description = rs.getString("description");
+	            String date = rs.getString("date");
+
+	            flist.add(new Feedbacks(feedbackId, description, date));
+	        }
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return flist;
 		
 	}
 }

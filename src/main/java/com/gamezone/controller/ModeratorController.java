@@ -15,12 +15,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.gamezone.dao.ModeratorDAO;
+import com.gamezone.model.Feedbacks;
 import com.gamezone.model.News;
 
 
 	//@WebServlet("/")
 
-	@WebServlet(urlPatterns = {"/moderator/manageNews", "/moderator/createdNews"})
+	@WebServlet(urlPatterns = {"/moderator/manageNews", "/moderator/createdNews", "/moderator/feedbacks"})
 
 	public class ModeratorController extends HttpServlet {
 		private static final long serialVersionUID = 1L;
@@ -67,16 +68,51 @@ import com.gamezone.model.News;
 						
 					case "/moderator/createdNews":
 						showNews(request, response);
+						break;
+						
+					case "/moderator/feedbacks":
+						showFeedbacks(request, response);
 						break;	
+						
+					case "/moderator/updateNews":
+						updateNews(request, response);
+						break;	
+						
 						
 					}
 				}
 		
 		
+			private void showFeedbacks(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+					
+				List<Feedbacks> flist = new ArrayList<>();
+				
+				flist = dao.getFeedbacks();
+				
+				request.setAttribute("feedbacklist", flist);
+				RequestDispatcher rd = request.getRequestDispatcher("feedbacks.jsp");
+				rd.forward(request, response);
+				
+			
+		}
+
+
+
+
+			//---------------------------------
 		
-		//---------------------------------
 		
-		
+		private void updateNews(HttpServletRequest request, HttpServletResponse response) {
+			 
+			 
+				
+				int id = Integer.parseInt(request.getParameter("id"));
+				
+				//News oldUser = dao.selectNews(id);
+				 
+	
+			
+		}
 		
 		
 

@@ -78,7 +78,7 @@
         <div class="card-container">
             
             <div class="card-button">
-                <a href = "#" style = "text-decoration:none; color:white;"><i class="fas fa-comments"></i><br><span>Feedback</span></a>
+                <a href = "feedbacks" style = "text-decoration:none; color:white;"><i class="fas fa-comments"></i><br><span>Feedback</span></a>
             </div>
             
             <div class="card-button">
