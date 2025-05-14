@@ -111,4 +111,22 @@ public class ModeratorDAO {
 	    return flist;
 		
 	}
+
+	public News selectNews(int id) {
+		
+	}
+		Connection con = dbConnection();
+		
+		try {
+			 String sql = "Select * from news where id =?"
+	         PreparedStatement ps = con.prepareStatement(sql);
+			 ps.setInt(1, id);
+			
+			 ps.setInt(1, id);
+			 
+		}catch (Exception e) {
+			
+		}
+		return null;
+	}
 }

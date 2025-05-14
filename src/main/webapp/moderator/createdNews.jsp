@@ -82,12 +82,12 @@
          
             <div class="">
                 <h4 style = "color:#106cff;"><c:out value="${newslist.title }"></c:out></h4>
-                <!--p><c:out value="${newslist.id }"></c:out></p-->
+                <p>post ID : <c:out value="${newslist.id }"></c:out></p>
                 <p><c:out value="${newslist.content }"></c:out></p>
                 <p><c:out value="${newslist.date}"></c:out></p>
                  
-                <a href="updateUser?id=<c:out value='${usr.userID}'/>" style = "color:#6d747c; text-decoration:none; margin-right:2px;"> Update </a>
-				<a href="deleteUser?id=<c:out value='${usr.userID}'/>" style = "color:red; text-decoration:none;"> Delete </a>
+                <a href="updateNews?id=<c:out value='${newslist.id}'/>" style = "color:#6d747c; text-decoration:none; margin-right:2px;"> Update </a>
+				<a href="deleteNews?id=<c:out value='${newslist.id}'/>" style = "color:red; text-decoration:none;"> Delete </a>
             </div>
             
     </div>

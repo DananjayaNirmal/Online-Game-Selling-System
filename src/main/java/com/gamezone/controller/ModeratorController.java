@@ -21,7 +21,7 @@ import com.gamezone.model.News;
 
 	//@WebServlet("/")
 
-	@WebServlet(urlPatterns = {"/moderator/manageNews", "/moderator/createdNews", "/moderator/feedbacks"})
+	@WebServlet(urlPatterns = {"/moderator/manageNews", "/moderator/createdNews", "/moderator/feedbacks", "/moderator/updateNews", "/giveFeedbacks"})
 
 	public class ModeratorController extends HttpServlet {
 		private static final long serialVersionUID = 1L;
@@ -108,7 +108,8 @@ import com.gamezone.model.News;
 				
 				int id = Integer.parseInt(request.getParameter("id"));
 				
-				//News oldUser = dao.selectNews(id);
+				News nws = dao.selectNews(id);
+				
 				 
 	
 			
