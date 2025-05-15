@@ -1,5 +1,4 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,14 +22,16 @@
             margin: 0;
             padding: 20px;
         }
+        
         .container {
             width: 80%;
             margin: auto;
-            background-color:#212429;
+            background-color: #1a1a1a;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
         }
+        
         h2 {
         
             color: white;
@@ -43,10 +44,13 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            
         }
+        
         button:hover {
             background-color: #218838;
         }
+        
         
         .news-item button {
             background-color: #007bff;
@@ -56,31 +60,34 @@
             cursor: pointer;
             border-radius: 5px;
         }
+        
         .news-item button.delete {
             background-color: #dc3545;
         }
+        
         .news-item button:hover {
             opacity: 0.8;
         }
     </style>
-    
 </head>
 <body>
 
-	 <h2> Feedbacks </h2>
-	 
-	 
-	<c:forEach var="feedbacklist" items="${feedbacklist}"> 
+	 <h2>All published News</h2>
+
+	<c:forEach var="newslist" items="${newslist}"> 
 
     <div class="container" style = "margin-bottom:10px;">
+        
+
          
             <div class="">
-                <h4 style = "color:#106cff;"><c:out value="${feedbacklist.feedbackId }"></c:out></h4>
-                <!--p><c:out value="${newslist.id }"></c:out></p-->
-                <p><c:out value="${feedbacklist.description }"></c:out></p>
-                <p><c:out value="${feedbacklist.date}"></c:out></p>
+                <h4 style = "color:#106cff;"><c:out value="${newslist.title }"></c:out></h4>
+                <p>post ID : <c:out value="${newslist.id }"></c:out></p>
+                <p><c:out value="${newslist.content }"></c:out></p>
+                <p><c:out value="${newslist.date}"></c:out></p>
                  
-                <a href="" style = "color:white; text-decoration:none; margin-right:2px; border:1px solid blue; padding:4px; background-color:#106cff;"> Forward to Admin </a>
+                <a href="showUpdateNews?id=<c:out value='${newslist.id}'/>" style = "color:#6d747c; text-decoration:none; margin-right:2px;"> Update </a>
+				<a href="deleteNews?id=<c:out value='${newslist.id}'/>" style = "color:red; text-decoration:none;"> Delete </a>
             </div>
             
     </div>

@@ -111,22 +111,79 @@ public class ModeratorDAO {
 	    return flist;
 		
 	}
-
+	
+	//___________________________________________Select old news need to be updated_______________________________________________________________________
+	
+	
 	public News selectNews(int id) {
-		
+	    News nws = null;
+	    
+	    try (Connection con = dbConnection();
+	         PreparedStatement ps = con.prepareStatement("SELECT * FROM news WHERE id = ?")) {
+
+	        ps.setInt(1, id);
+	        ResultSet rs = ps.executeQuery();
+
+	        if (rs.next()) {
+	            String title = rs.getString("title");
+	            String content = rs.getString("content");
+	            String date = rs.getString("date");
+
+	            nws = new News(id, title, content, date);
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return nws;
 	}
+	
+
+	//________________________________________________________________________________________________________________________________
+	
+	
+	public void updateNews(News unws) {
+		
 		Connection con = dbConnection();
 		
 		try {
-			 String sql = "Select * from news where id =?"
-	         PreparedStatement ps = con.prepareStatement(sql);
-			 ps.setInt(1, id);
-			
-			 ps.setInt(1, id);
 			 
-		}catch (Exception e) {
+				 String sql = "Update news Set title=?, content=? Where id=?";
+		         PreparedStatement ps = con.prepareStatement(sql);
+
+		   
+		           ps.setString(1, unws.getTitle());
+				   ps.setString(2, unws.getContent());
+				   ps.setInt(3, unws.getId());
+					
+				   ps.executeUpdate();	
+
+		    } catch (Exception e) {
+		    	
+		        e.printStackTrace();
+		    }
+		
+	}
+
+	public void deleteNews(int id) {
+		
+		
+		
+		try {
+			Connection con = dbConnection();
+			String query = "Delete From News Where id = ?";
+			PreparedStatement ps = con.prepareStatement(query);
 			
+			ps.setInt(1, id);
+			ps.executeUpdate();
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
 		}
-		return null;
+		
 	}
 }
+
+

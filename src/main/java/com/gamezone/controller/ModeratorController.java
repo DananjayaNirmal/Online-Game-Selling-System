@@ -1,6 +1,7 @@
 package com.gamezone.controller;
 
 import java.io.IOException;
+
 import java.sql.Date;
 import java.time.LocalDate;
 //import java.util.Date;
@@ -21,7 +22,7 @@ import com.gamezone.model.News;
 
 	//@WebServlet("/")
 
-	@WebServlet(urlPatterns = {"/moderator/manageNews", "/moderator/createdNews", "/moderator/feedbacks", "/moderator/updateNews", "/giveFeedbacks"})
+	@WebServlet(urlPatterns = {"/moderator/manageNews", "/moderator/displayNews", "/moderator/feedbacks", "/moderator/showUpdateNews", "/giveFeedbacks", "/moderator/updateNews", "/moderator/deleteNews"})
 
 	public class ModeratorController extends HttpServlet {
 		private static final long serialVersionUID = 1L;
@@ -41,18 +42,24 @@ import com.gamezone.model.News;
 						createNews(request, response);
 						break;	
 						
-					/*case "/moderator/createdNews":
-						showNews(request, response);
-						break;	*/
+					case "/moderator/updateNews":
+						updateNews(request, response);
+						break;
+							
 						
 					}
 				}
-		
-		
-		
-		
+
+
+
+
 		//------------------------------
 		
+		
+
+
+
+
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 				throws ServletException, IOException {
 					
@@ -61,12 +68,7 @@ import com.gamezone.model.News;
 					
 					switch(path) {
 					
-					/*case "/moderator/manageNews":
-						System.out.println("create news clicked" + path);
-						createNews(request, response);
-						break;	*/
-						
-					case "/moderator/createdNews":
+					case "/moderator/displayNews":
 						showNews(request, response);
 						break;
 						
@@ -74,12 +76,31 @@ import com.gamezone.model.News;
 						showFeedbacks(request, response);
 						break;	
 						
-					case "/moderator/updateNews":
-						updateNews(request, response);
+					case "/moderator/showUpdateNews":
+						showUpdateNews(request, response);
 						break;	
 						
+					case "/moderator/deleteNews":
+						deleteNews(request, response);
+						break;	
 						
 					}
+				}
+		
+		
+		//---------------------------------
+		
+		
+		
+		
+			private void deleteNews(HttpServletRequest request, HttpServletResponse response) throws IOException {
+					 
+				int id = Integer.parseInt(request.getParameter("id"));
+					
+				dao.deleteNews(id);
+					
+				response.sendRedirect ("displayNews");
+					
 				}
 		
 		
@@ -97,23 +118,41 @@ import com.gamezone.model.News;
 		}
 
 
-
-
-			//---------------------------------
 		
-		
-		private void updateNews(HttpServletRequest request, HttpServletResponse response) {
+			
+			//-----------------------
+			
+		private void showUpdateNews(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			 
 			 
 				
 				int id = Integer.parseInt(request.getParameter("id"));
 				
 				News nws = dao.selectNews(id);
-				
-				 
+				RequestDispatcher rd = request.getRequestDispatcher("showUpdateNews.jsp");
+				request.setAttribute("ns", nws); 
+				rd.forward(request, response);
 	
 			
 		}
+		
+		
+		
+		private void updateNews(HttpServletRequest request, HttpServletResponse response) throws IOException {
+			int id = Integer.parseInt(request.getParameter("id"));
+			String title = request.getParameter("title");
+			String content = request.getParameter("content");
+			String date = request.getParameter("date");
+			
+			News unws = new News(id, title, content, date);
+			
+			dao.updateNews(unws);
+			
+			response.sendRedirect("displayNews");
+		}
+		
+		
+		//------------------------------------------------------
 		
 		
 
@@ -123,15 +162,13 @@ import com.gamezone.model.News;
 			
 			nl = dao.getStoredNews();
 			
-			System.out.println("News List" + nl);
-			
 			request.setAttribute("newslist", nl);
-			RequestDispatcher rd = request.getRequestDispatcher("createdNews.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("displayNews.jsp");
 			rd.forward(request, response);
 			
 		}
 
-		private void createNews(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		private void createNews(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 			
 			String title = request.getParameter("title");
 			String content = request.getParameter("content");
@@ -139,76 +176,23 @@ import com.gamezone.model.News;
 			LocalDate today = LocalDate.now();
 			String date = Date.valueOf(today).toString();
 
-			System.out.println(title);
-			//System.out.println(date);
+			
+			if (title == null || title.trim().isEmpty()) {
+		        request.setAttribute("error", "Title is required.");
+		        request.getRequestDispatcher("manageNews.jsp").forward(request, response);
+		        return;
+		    }
 			
 			
 			News news = new News(title,content, date);
-			//System.out.println("The converted Date is:" + news.getDate());
-			//dao.storeNews(news);
-			//System.out.println("news added");
-			//response.sendRedirect("/admin/manageUsers");
+	
 			
 			dao.storeNews(news);
-			//response.sendRedirect("manageNews.jsp");
-			response.sendRedirect("createdNews");
+			response.sendRedirect("manageNews.jsp");
 			
 		}
 
 		 
-		
-
-		/*private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) {
-			
-			int id = Integer.parseInt(request.getParameter("id"));
-			
-			User oldUser = dao.selectCurrentUser(id);
-			 
-			
-		}
-		
-
-		private void showManageUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
-					List<User> userList = new ArrayList<>();
-					
-					userList = dao.getAllUsers();
-					
-					System.out.println("Dana" + userList);
-					
-					request.setAttribute("usr", userList);
-					RequestDispatcher rd = request.getRequestDispatcher("manageUsers.jsp");
-					rd.forward(request, response);
-			
-		}
-
-		private void showAdminDashboard(HttpServletRequest request, HttpServletResponse response) {
-			
-			
-			
-		}
-
-		private void checkLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
-			
-			String un = request.getParameter("uname");
-			String up = request.getParameter("upass");
-			
-			//System.out.println(un);
-			//System.out.println(un);
-			
-			if(dao.checkAdmin(un, up)) {
-				
-				System.out.println("Login success");
-				response.sendRedirect("manageGames.jsp");
-				
-			}else {
-				
-				System.out.println("Login failed");
-				response.sendRedirect("adminLogin.jsp");
-				
-			}
-			
-		}*/
 		
 	}
 

@@ -11,7 +11,7 @@
                 </li>
 
                 <li class="nav-item me-2 col">
-                    <a href = "manageUsers" class="nav-link text-light">Manage Users</a>
+                    <a href = "showUsers" class="nav-link text-light">Manage Users</a>
                 </li>
 
 

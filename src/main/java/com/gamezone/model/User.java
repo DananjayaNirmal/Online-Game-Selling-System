@@ -12,9 +12,9 @@ public class User {
 	private int age;
 	private String gender;
 	
-	public User(int userId, String userName, String email, int phoneNo, String password, String roll, int age, String gender) {
+	public User(int userID, String userName, String email, int phoneNo, String password, String roll, int age, String gender) {
 		super();
-		this.userID = userId;
+		this.userID = userID;
 		this.userName = userName;
 		this.email = email;
 		this.phoneNo = phoneNo;
@@ -35,28 +35,11 @@ public class User {
 		this.gender = gender;
 	}
 	
-
-	public int getAge() {
-		return age;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
 	@Override
-	public String toString() {
-		return "User [userID=" + userID + ", userName=" + userName + ", email=" + email + ", phoneNo=" + phoneNo
-				+ ", password=" + password + ", roll=" + roll + ", age=" + age + ", gender=" + gender + "]";
-	}
+		public String toString() {
+			return "User [userID=" + userID + ", userName=" + userName + ", email=" + email + ", phoneNo=" + phoneNo
+					+ ", password=" + password + ", roll=" + roll + ", age=" + age + ", gender=" + gender + "]";
+		}
 
 	public int getUserID() {
 		return userID;
@@ -82,8 +65,16 @@ public class User {
 		return roll;
 	}
 
-	public void setUserID(int userId) {
-		this.userID = userId;
+	public int getAge() {
+		return age;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 
 	public void setUserName(String userName) {
@@ -105,6 +96,15 @@ public class User {
 	public void setRoll(String roll) {
 		this.roll = roll;
 	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	
 	
 	
 	

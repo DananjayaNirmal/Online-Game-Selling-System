@@ -1,16 +1,10 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity=
-    "sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-	
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Management</title>
@@ -30,11 +24,19 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
         }
-        h2 {
-        
+        h2, h3, h4 {
+            text-align: center;
             color: white;
         }
-        
+        form input, form textarea, form select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
         button {
             padding: 10px 20px;
             background-color: #28a745;
@@ -46,11 +48,11 @@
         button:hover {
             background-color: #218838;
         }
-        /*.news-item {
+        .news-item {
             background-color: #222;
             padding: 15px;
             margin-bottom: 10px;
-            border-radius: 5px;*/
+            border-radius: 5px;
         }
         .news-item button {
             background-color: #007bff;
@@ -70,29 +72,32 @@
 </head>
 <body>
 
-	 <h2>All published News</h2>
+ 
+    <div class="container">
+    <h2>Edit Post</h2>
 
-	<c:forEach var="newslist" items="${newslist}"> 
+    <form action="updateNews" method="post">
+       
+        <!--input type="hidden" name="action" value="update"-->
+      
+        <input type="hidden" name="id" value="${ns.id}">
 
-    <div class="container" style = "margin-bottom:10px;">
+       
+        <input type="text" name="title" value="${ns.title}" required>
+
+      
+        <textarea name="content" style="height: 300px;" required>${ns.content}</textarea>
         
-        
-        <!--a href = "showNews" style = "text-decoration:none; color:white;">refresh</a-->
+         <input type="hidden" name="date" value="${ns.date}" required>
 
-         
-            <div class="">
-                <h4 style = "color:#106cff;"><c:out value="${newslist.title }"></c:out></h4>
-                <p>post ID : <c:out value="${newslist.id }"></c:out></p>
-                <p><c:out value="${newslist.content }"></c:out></p>
-                <p><c:out value="${newslist.date}"></c:out></p>
-                 
-                <a href="updateNews?id=<c:out value='${newslist.id}'/>" style = "color:#6d747c; text-decoration:none; margin-right:2px;"> Update </a>
-				<a href="deleteNews?id=<c:out value='${newslist.id}'/>" style = "color:red; text-decoration:none;"> Delete </a>
-            </div>
-            
-    </div>
+       
+        <button type="submit">Update</button>
+
+       
+        <a href="moderatorDashboard.jsp" style="text-decoration:none; margin-left:10px; color:#106cff;">Back to Dashboard</a>
+    </form>
+</div>
     
-    </c:forEach>
 
 </body>
 </html>

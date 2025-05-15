@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.gamezone.dao.AdminDAO;
+import com.gamezone.model.News;
 import com.gamezone.model.User;
 
 
@@ -20,7 +21,7 @@ import javax.servlet.RequestDispatcher;
 
 //@WebServlet("/")
 
-@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/manageUsers", "/admin/addNewUser", "/admin/updateUser","/admin/deleteUser", "/admin/manageGames", "/admin/adminDashboard"})
+@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/showUsers", "/admin/addNewUser", "/admin/updateUser","/admin/deleteUser", "/admin/manageGames", "/admin/adminDashboard"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -43,8 +44,8 @@ public class AdminController extends HttpServlet {
 					break;
 					
 					
-				case "/admin/manageUsers":
-					showManageUsers(request, response);
+				case "/admin/showUsers":
+					showUsers(request, response);
 					break;
 					
 				case "/admin/addNewUser" :
@@ -70,11 +71,15 @@ public class AdminController extends HttpServlet {
 	}
 	
 
-	private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) {
+	private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int id = Integer.parseInt(request.getParameter("id"));
 		
-		User oldUser = dao.selectCurrentUser(id);
+		User currentUser = dao.findUserById(id);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("updateUser.jsp");
+		request.setAttribute("cUser", currentUser); 
+		rd.forward(request, response);
 		 
 		
 	}
@@ -100,7 +105,7 @@ public class AdminController extends HttpServlet {
 		
 	}
 
-	private void showManageUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void showUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
 				List<User> userList = new ArrayList<>();
 				
@@ -109,7 +114,7 @@ public class AdminController extends HttpServlet {
 				System.out.println("Dana" + userList);
 				
 				request.setAttribute("usr", userList);
-				RequestDispatcher rd = request.getRequestDispatcher("manageUsers.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("showUsers.jsp");
 				rd.forward(request, response);
 		
 	}

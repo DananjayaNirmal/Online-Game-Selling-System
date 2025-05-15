@@ -11,6 +11,7 @@ import java.util.ArrayList;
 //import java.util.List;
 import java.util.List;
 
+import com.gamezone.model.News;
 import com.gamezone.model.User;
 
 //import com.gamezone.util.DBConnection;
@@ -144,43 +145,35 @@ public class AdminDAO {
 	}
 
 
-	public User selectCurrentUser(int id) {
-		
+	public User findUserById(int id) {
 		Connection con = dbConnection();
-		
 		User currentUser = null;
+		//int userID = id;
 		
-		try {
-			String sql = "Select * from user where id = ?";
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setInt(1,id);
-			
-			//print ps
-			
-			ResultSet rs = ps.executeQuery();
-			
-			while(rs.next()) {
+		 try (
 				
-				String name = rs.getString("userName");
-				String email = rs.getString("email");
-				int age = rs.getInt("age");
-				String gender = rs.getString("gender");
-				int phoneNumber = rs.getInt("phoneNumber");
-				String password = rs.getString("password");
-				String roll = rs.getString("roll");
-				
-				//currentUser = new User(id, name, email,age, gender, phoneNumber, password, roll);
-				
-			}
-			
-			
-		}catch(Exception e) {
-			 
-		}
-		
-		return currentUser;
-	}
+		         PreparedStatement ps = con.prepareStatement("SELECT * FROM userdetails WHERE id = ?")) {
 
-	
-	
+		        ps.setInt(1, id);
+		        ResultSet rs = ps.executeQuery();
+
+		        if (rs.next()) {
+		            String userName = rs.getString("userName");
+		            String email = rs.getString("email");
+		            int age = rs.getInt("age");
+		            String gender = rs.getString("gender");
+		            int phoneNo = rs.getInt("phoneNumber");
+		            String password = rs.getString("password");
+		            String roll = rs.getString("roll");
+
+		            currentUser = new User(id, userName, email, phoneNo, password, roll, age, gender);
+		        }
+
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
+
+		    return currentUser;
+		}	
+
 }

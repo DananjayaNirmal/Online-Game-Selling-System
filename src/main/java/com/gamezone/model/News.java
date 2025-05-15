@@ -6,9 +6,14 @@ public class News {
 	private String title;
 	private String content;
 	private String date;
-	//private String content;
-	//private String date;
 	
+	public News(int id, String title, String content, String date) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.content = content;
+		this.date = date;
+	}
 	
 	public News(String title, String content, String date) {
 		super();
@@ -18,13 +23,7 @@ public class News {
 	}
 	
 	
-	public News(int id, String title, String content, String date) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.content = content;
-		this.date = date;
-	}
+	
 
 
 	@Override

@@ -1,3 +1,11 @@
+<!-- sample val -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String error = (String) request.getAttribute("error");
+%>
+
+<!-- sample val -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,6 +77,15 @@
 </head>
 <body>
 
+	<!-- sample val -->
+
+	<% if (error != null) { %>
+    <p style="color:red;"><%= error %></p>
+    <% } %>
+    
+    <!-- sample val -->
+    
+
     <div class="container">
         <h2>New Post</h2>
 
@@ -76,13 +93,13 @@
         <form action="manageNews"  method="post" >
         
             <input type="hidden" name="action" value="insert">
-            <input type="text" name="title" placeholder="News Title" required>
+            <input type="text" name="title" placeholder="News Title" required value="<%= request.getParameter("title") != null ? request.getParameter("title") : "" %>"/ >
             <textarea name="content" placeholder="News Content" required style="height: 300px;"></textarea>
             
             <button type="submit">Publish</button> <a href = "moderatorDashboard.jsp" style = "text-decoration:none; color:white; margin-left:2px; color:#106cff;"> Back to Dash board </a>
         </form>
 		<p style = "margin-top:40px;"> 
-        <a href = "createdNews" style = "text-decoration:none; color:white;"> Open Created News </a>
+        <a href = "displayNews" style = "text-decoration:none; color:white;"> Open Created News </a>
         <p style = "margin-bottom:40px;">    
     </div>
 
