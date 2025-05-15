@@ -41,18 +41,19 @@
 
   <div class="container">
     <div class="feedback-container">
-      <h2 class="form-title">We Value Your Feedback</h2>
+      <h2 class="form-title" style = "color:white;">We Value Your Feedback</h2>
       <form action="giveFeedbacks" method="post">
 
         <div class="mb-3">
-        	<input type = "email" class="form-control text-light" name="email" required placeholder ="Enter your E-mail" style = "background-color:#1a1a1a; color:white;"></textarea>
+        	<label for="feedback" class="form-label text-light">Enter your E-mail</label>
+        	<input type = "email" class="form-control text-light" name="email" required style = "background-color:#1a1a1a; ">
         </div>
           
 
       
         <div class="mb-3">
           <label for="feedback" class="form-label text-light">Your Message</label>
-          <textarea class="form-control" name="feedback" rows="4" required style = "background-color:#1a1a1a; color:white;"></textarea>
+          <textarea class="form-control" name="description" rows="4" required style = "background-color:#1a1a1a; color:white;"></textarea>
         </div>
 
          

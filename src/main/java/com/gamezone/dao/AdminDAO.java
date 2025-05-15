@@ -104,7 +104,7 @@ public class AdminDAO {
 				int userID = rs.getInt("userID");
 				String userName = rs.getString("userName");
 				String email = rs.getString("email");
-				int phoneNo = rs.getInt("phoneNumber");
+				String phoneNo = rs.getString("phoneNumber");
 				String password = rs.getString("password");
 				String roll = rs.getString("roll");
 				int age = rs.getInt("age");
@@ -134,7 +134,7 @@ public class AdminDAO {
 	        ps.setString(2, usr.getEmail());
 	        ps.setInt(3, usr.getAge());
 	        ps.setString(4, usr.getGender());
-	        ps.setInt(5, usr.getPhoneNo());
+	        ps.setString(5, usr.getPhoneNo());
 	        ps.setString(6, usr.getPassword());
 	        ps.setString(7, usr.getRoll());
 	        ps.executeUpdate();
@@ -146,13 +146,16 @@ public class AdminDAO {
 
 
 	public User findUserById(int id) {
+		
+		//System.out.println("ZZZZZ"+id);
+		
 		Connection con = dbConnection();
 		User currentUser = null;
-		//int userID = id;
+		int userID = id;
 		
 		 try (
 				
-		         PreparedStatement ps = con.prepareStatement("SELECT * FROM userdetails WHERE id = ?")) {
+		         PreparedStatement ps = con.prepareStatement("SELECT * FROM userDetails WHERE id = ?")) {
 
 		        ps.setInt(1, id);
 		        ResultSet rs = ps.executeQuery();
@@ -162,11 +165,11 @@ public class AdminDAO {
 		            String email = rs.getString("email");
 		            int age = rs.getInt("age");
 		            String gender = rs.getString("gender");
-		            int phoneNo = rs.getInt("phoneNumber");
+		            String phoneNo = rs.getString("phoneNumber");
 		            String password = rs.getString("password");
 		            String roll = rs.getString("roll");
 
-		            currentUser = new User(id, userName, email, phoneNo, password, roll, age, gender);
+		            currentUser = new User(userID, userName, email, phoneNo, password, roll, age, gender);
 		        }
 
 		    } catch (Exception e) {

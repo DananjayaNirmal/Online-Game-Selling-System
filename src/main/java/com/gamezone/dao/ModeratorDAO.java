@@ -98,10 +98,12 @@ public class ModeratorDAO {
 
 	        while (rs.next()) {
 	            int feedbackId = rs.getInt("feedbackId");
+	            String email = rs.getString("email");
 	            String description = rs.getString("description");
+	            
 	            String date = rs.getString("date");
 
-	            flist.add(new Feedbacks(feedbackId, description, date));
+	            flist.add(new Feedbacks(feedbackId, email, description, date));
 	        }
 	        
 	    } catch (Exception e) {
@@ -182,6 +184,25 @@ public class ModeratorDAO {
 			
 			e.printStackTrace();
 		}
+		
+	}
+
+	public void insertFeedback(Feedbacks fb) {
+		 
+		try (Connection con = dbConnection()) {
+	        Statement stmt = con.createStatement();
+
+	        String sql = "INSERT INTO feedbacks(email, description, date) VALUES (" +
+	                "'" + fb.getEmail() + "', " +
+	                "'" + fb.getDescription() + "', " +
+	                "'" + fb.getDate() + "'" +
+	                ")";
+	        
+	   stmt.executeUpdate(sql);
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 		
 	}
 }

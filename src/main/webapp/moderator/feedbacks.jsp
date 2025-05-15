@@ -76,7 +76,7 @@
          
             <div class="">
                 <h4 style = "color:#106cff;"><c:out value="${feedbacklist.feedbackId }"></c:out></h4>
-                <!--p><c:out value="${newslist.id }"></c:out></p-->
+                <p><c:out value="${feedbacklist.email}"></c:out></p>
                 <p><c:out value="${feedbacklist.description }"></c:out></p>
                 <p><c:out value="${feedbacklist.date}"></c:out></p>
                  

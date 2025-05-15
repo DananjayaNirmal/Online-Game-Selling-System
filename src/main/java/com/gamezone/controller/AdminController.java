@@ -21,7 +21,7 @@ import javax.servlet.RequestDispatcher;
 
 //@WebServlet("/")
 
-@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/showUsers", "/admin/addNewUser", "/admin/updateUser","/admin/deleteUser", "/admin/manageGames", "/admin/adminDashboard"})
+@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/showUsers", "/admin/addNewUser", "/admin/updateUserForm", "/admin/manageGames", "/admin/adminDashboard"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -52,7 +52,7 @@ public class AdminController extends HttpServlet {
 					addNewUser(request, response);
 					break;	
 				
-				case "/admin/updateUser":
+				case "/admin/updateUserForm":
 					showUpdateForm(request, response);
 					break;	
 					
@@ -76,11 +76,12 @@ public class AdminController extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		
 		User currentUser = dao.findUserById(id);
+		System.out.println("XXXXX" + currentUser);	
 		
-		RequestDispatcher rd = request.getRequestDispatcher("updateUser.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("updateUserForm.jsp");
 		request.setAttribute("cUser", currentUser); 
 		rd.forward(request, response);
-		 
+		
 		
 	}
 	
@@ -89,7 +90,7 @@ public class AdminController extends HttpServlet {
 		
 		String userName = request.getParameter("uname");
 		String email = request.getParameter("uemail");
-		int phoneNo = Integer.parseInt(request.getParameter("phoneno"));
+		String phoneNo = request.getParameter("phoneno");
 		String password = request.getParameter("upass");
 		String roll = request.getParameter("roll");
 		int age = Integer.parseInt(request.getParameter("uage"));

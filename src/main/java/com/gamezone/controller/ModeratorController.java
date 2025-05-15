@@ -22,7 +22,7 @@ import com.gamezone.model.News;
 
 	//@WebServlet("/")
 
-	@WebServlet(urlPatterns = {"/moderator/manageNews", "/moderator/displayNews", "/moderator/feedbacks", "/moderator/showUpdateNews", "/giveFeedbacks", "/moderator/updateNews", "/moderator/deleteNews"})
+	@WebServlet(urlPatterns = {"/moderator/manageNews", "/moderator/displayNews", "/moderator/feedbacks", "/moderator/showUpdateNews", "/giveFeedbacks", "/moderator/updateNews", "/moderator/deleteNews", "/moderator/giveFeedbacks"})
 
 	public class ModeratorController extends HttpServlet {
 		private static final long serialVersionUID = 1L;
@@ -45,10 +45,37 @@ import com.gamezone.model.News;
 					case "/moderator/updateNews":
 						updateNews(request, response);
 						break;
+						
+					case "/moderator/giveFeedbacks":
+						insertFeedbacks(request, response);
+						break;	
 							
 						
 					}
 				}
+
+
+
+
+		private void insertFeedbacks(HttpServletRequest request, HttpServletResponse response) throws IOException {
+			
+			
+			String email = request.getParameter("email");
+			String description = request.getParameter("description");
+			
+			LocalDate today = LocalDate.now();
+			String date = Date.valueOf(today).toString();
+
+			
+			
+			Feedbacks fb = new Feedbacks(email, description, date);
+	
+			
+			dao.insertFeedback(fb);
+			response.sendRedirect("giveFeedbacks.jsp");
+			
+		}
+			
 
 
 
@@ -132,8 +159,6 @@ import com.gamezone.model.News;
 				RequestDispatcher rd = request.getRequestDispatcher("showUpdateNews.jsp");
 				request.setAttribute("ns", nws); 
 				rd.forward(request, response);
-	
-			
 		}
 		
 		

@@ -5,14 +5,14 @@ public class User {
 	private int userID;
 	private String userName;
 	private String email;
-	private int phoneNo;
+	private String phoneNo;
 	private String password;
 	private String roll;
 	
 	private int age;
 	private String gender;
 	
-	public User(int userID, String userName, String email, int phoneNo, String password, String roll, int age, String gender) {
+	public User(int userID, String userName, String email, String phoneNo, String password, String roll, int age, String gender) {
 		super();
 		this.userID = userID;
 		this.userName = userName;
@@ -24,7 +24,7 @@ public class User {
 		this.gender = gender;
 	}
 
-	public User(String userName, String email, int phoneNo, String password, String roll, int age, String gender) {
+	public User(String userName, String email, String phoneNo, String password, String roll, int age, String gender) {
 		super();
 		this.userName = userName;
 		this.email = email;
@@ -53,7 +53,7 @@ public class User {
 		return email;
 	}
 
-	public int getPhoneNo() {
+	public String getPhoneNo() {
 		return phoneNo;
 	}
 
@@ -85,7 +85,7 @@ public class User {
 		this.email = email;
 	}
 
-	public void setPhoneNo(int phoneNo) {
+	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
 
