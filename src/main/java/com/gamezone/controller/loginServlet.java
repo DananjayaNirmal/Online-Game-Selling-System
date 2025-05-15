@@ -37,11 +37,11 @@ public class loginServlet extends HttpServlet {
             if ("developer".equalsIgnoreCase(user.getRole())) {
                 response.sendRedirect("developerDashboard.jsp?login=success");
             } else if ("customer".equalsIgnoreCase(user.getRole())) {
-                response.sendRedirect("customerDashboard.jsp?login=success");
+                response.sendRedirect("Customer/userDash.jsp?login=success");
             } else if ("moderator".equalsIgnoreCase(user.getRole())) {
-                response.sendRedirect("moderatorDashboard.jsp?login=success");
+                response.sendRedirect("moderator/moderatorDashboard.jsp?login=success");
             } else if ("admin".equalsIgnoreCase(user.getRole())) {
-                response.sendRedirect("adminDashboard.jsp?login=success");
+                response.sendRedirect("admin/adminDashboard.jsp?login=success");
             } else {
                 response.sendRedirect("home.jsp?login=success");
             }

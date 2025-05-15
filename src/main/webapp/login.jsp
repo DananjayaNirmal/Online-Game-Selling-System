@@ -148,12 +148,9 @@
         
             <div class="link-buttons">
                 <div class="link-row">
-                    <span>Forgot your password?</span>
-                    <button type="button" onclick="alert('Password reset not implemented yet.')">Click Here</button>
-                </div>
-                <div class="link-row">
                     <span>Don’t have an account?</span>
                     <button type="button" onclick="window.location.href='register.jsp'">Sign Up</button>
+                    <button type="button" onclick="window.location.href='home.jsp'">Go Back</button>
                 </div>
             </div>
 
@@ -174,7 +171,7 @@
     
     
     <script>
-    // Parse query parameters
+    
     const urlParams = new URLSearchParams(window.location.search);
     const error = urlParams.get("error");
     const login = urlParams.get("login");

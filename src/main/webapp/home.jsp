@@ -130,7 +130,7 @@
                         More
                     </a>
                     <ul class="dropdown-menu">
-                    	<li><a class="dropdown-item" href="#">About Us</a></li>
+                    	<li><a class="dropdown-item" href="aboutUs.jsp">About Us</a></li>
                         <li><a class="dropdown-item" href="#">Contact Us</a></li>
                         <li><a class="dropdown-item" href="#">Feedbacks</a></li>
                         
@@ -145,8 +145,8 @@
 
             <div class="navbar-text">
 
-                <button type="button" class="btn btn-dark btn-sm">Log in</button>
-                <button type="button" class="btn btn-primary btn-sm ms-2">Sign up</button> 
+                <button type="button" class="btn btn-dark btn-sm" onclick="window.location.href='login.jsp'" >Log in</button>
+                <button type="button" class="btn btn-primary btn-sm ms-2" onclick="window.location.href='register.jsp'">Sign up</button> 
 
             </div>
 
