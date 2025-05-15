@@ -21,38 +21,44 @@
 	<main class=" container ms-auto col-5 px-5 py-4" style = "background-color:#212429;">
 	<p style = "margin-top:50px;"></p>
 	
-	<form action = "updateUser">
+	<form action = "updateUser" method = "post">
 	<h3 style = "color:white; margin-bottom:20px;">Update User Details</h3>
+	
+	<div class = "form-group mb-2">
+	
+	<input type = "hidden" name = "uid" class = "form-control border-secondary bg-dark text-light" value="${cUser.userID}">
+	
+	</div>
 	
 	<div class = "form-group mb-2">
 	
 	<label class = "mb-2 text-light">User Name</label>
 	<input type = "text" name = "uname" class = "form-control border-secondary bg-dark text-light" value="${cUser.userName}">
 	
-	<iv-->
+	</div>
 	
 	
 	<div class = "form-group mb-2">
 	
 	<label class = "mb-2  text-light">E-mail</label>
-	<input type = "email" name = "uemail" class = "form-control border-secondary bg-dark" value="${cUser.email}">
+	<input type = "email" name = "uemail" class = "form-control border-secondary bg-dark text-light" value="${cUser.email}">
 	
 	</div>
 	
-	<hr style = "margin-bottom:40px; margin-top:40px;">
+	<hr style = "margin-bottom:40px; margin-top:40px; color:white;">
 	
 	<div class = "row">
 	
 	<div class = "form-group mb-2 col">
 	<label class = "mb-2  text-light">New Password</label>
-	<input type = "text" name = "upass" class = "form-control border-secondary text-light bg-dark" value="${cUser.password}">
+	<input type = "text" name = "upass" class = "form-control border-secondary text-light bg-dark text-light" value="${cUser.password}">
 	
 	</div>
 	
 	<div class = "form-group mb-4 col">
 	
 	<label class = "mb-2  text-light">Enter Password Again</label>
-	<input type = "text" name = "uconpass" class = "form-control border-secondary bg-dark" value="${cUser.password}">
+	<input type = "text" name = "uconpass" class = "form-control border-secondary bg-dark text-light" value="${cUser.password}">
 	
 	</div>
 	
@@ -60,8 +66,8 @@
 	
 	<hr style = "margin-bottom:40px; margin-top:40px;">
 	
-	<h3>Change roll</h3>
-	<select class="form-select text-light bg-dark" aria-label="Default select example" name = "roll">
+	<h5 class = "text-light">Change roll</h5>
+	<select class="form-select text-light bg-dark" aria-label="Default select example" name = "roll" class = "text-light">
 	 <option selected value="${cUser.roll}"></option>
 	 <option value="1">Admin</option>
 	 <option value="2">Customer</option>
@@ -69,19 +75,19 @@
 	</select>
 	
 		
-	<hr style = "margin-bottom:40px; margin-top:40px;">
+	<hr style = "margin-bottom:40px; margin-top:40px; color:white;">
 	
 	<div class = "form-group mb-2">
 	
 	<label class = "mb-2 text-light" >Age</label>
-	<input type = "text" name = "uage" class = "form-control border-secondary bg-dark" value="${cUser.age}">
+	<input type = "text" name = "uage" class = "form-control border-secondary bg-dark text-light" value="${cUser.age}">
 	
 	</div>
 	
 	<div class = "form-group mb-2">
 	
 	<label class = "mb-2 text-light">Gender</label>
-	<input type = "text" name = "ugender" class = "form-control border-secondary bg-dark" value="${cUser.gender}">
+	<input type = "text" name = "ugender" class = "form-control border-secondary bg-dark text-light" value="${cUser.gender}">
 	
 	</div>
 	
@@ -89,7 +95,7 @@
 	<div class = "form-group mb-4">
 	
 	<label class = "mb-2 text-light">Phone number</label>
-	<input type = "text" name = "phoneno" class = "form-control border-secondary bg-dark" value="${cUser.phoneNo}">
+	<input type = "text" name = "phoneno" class = "form-control border-secondary bg-dark text-light" value="${cUser.phoneNo}">
 	
 	</div>
 	

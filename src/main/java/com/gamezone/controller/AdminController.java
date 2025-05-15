@@ -3,6 +3,7 @@ package com.gamezone.controller;
 import java.io.IOException;
 
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.gamezone.dao.AdminDAO;
-import com.gamezone.model.News;
 import com.gamezone.model.User;
 
 
@@ -21,7 +21,7 @@ import javax.servlet.RequestDispatcher;
 
 //@WebServlet("/")
 
-@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/showUsers", "/admin/addNewUser", "/admin/updateUserForm", "/admin/manageGames", "/admin/adminDashboard"})
+@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/showUsers", "/admin/addNewUser", "/admin/updateUserForm", "/admin/manageGames", "/admin/adminDashboard", "/admin/updateUser"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -64,6 +64,53 @@ public class AdminController extends HttpServlet {
 					
 				}
 			}
+	
+	
+	
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+				
+				String act = request.getServletPath();
+				
+				switch(act) {
+				
+				case "/admin/updateUser":
+					
+					updateUser(request, response);
+					break;
+						
+					
+				}
+			}
+	
+	
+
+	private void updateUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		 
+		
+		
+		int userID = Integer.parseInt(request.getParameter("uid"));
+		String userName = request.getParameter("uname");
+		String email = request.getParameter("uemail");
+		int age = Integer.parseInt(request.getParameter("uage"));
+		String gender = request.getParameter("ugender");
+		String phoneNo = request.getParameter("phoneNo");
+		String password = request.getParameter("upass");
+		String roll = request.getParameter("roll");
+		
+		
+		User uusr = new User(userID, userName, email, phoneNo, password, roll, age, gender);
+		
+		dao.updateUser(uusr);
+		
+		response.sendRedirect("showUsers");
+		
+		
+	}
+
+
+
 
 	private void deleteUser(HttpServletRequest request, HttpServletResponse response) {
 		 
@@ -75,11 +122,11 @@ public class AdminController extends HttpServlet {
 		
 		int id = Integer.parseInt(request.getParameter("id"));
 		
-		User currentUser = dao.findUserById(id);
-		System.out.println("XXXXX" + currentUser);	
+		User usr = dao.findUserById(id);
+		//System.out.println("XXXXX" + usr);	
 		
 		RequestDispatcher rd = request.getRequestDispatcher("updateUserForm.jsp");
-		request.setAttribute("cUser", currentUser); 
+		request.setAttribute("cUser", usr); 
 		rd.forward(request, response);
 		
 		
