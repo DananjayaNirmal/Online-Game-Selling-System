@@ -2,6 +2,7 @@ package com.gamezone.dao;
 
 import java.sql.Connection;
 
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -104,7 +105,7 @@ public class AdminDAO {
 				int userID = rs.getInt("userID");
 				String userName = rs.getString("userName");
 				String email = rs.getString("email");
-				String phoneNo = rs.getString("phoneNumber");
+				String phoneNo = rs.getString("phoneNo");
 				String password = rs.getString("password");
 				String roll = rs.getString("roll");
 				int age = rs.getInt("age");
@@ -127,7 +128,7 @@ public class AdminDAO {
 	public void insertUser(User usr) {
 		
 		try (Connection con = dbConnection()) {
-	        String sql = "INSERT INTO userDetails(userName, email, age, gender, phoneNumber, password, roll) VALUES"
+	        String sql = "INSERT INTO userDetails(userName, email, age, gender, phoneNo, password, roll) VALUES"
 	        		+ " (?, ?, ?, ?, ?, ?, ?)";
 	        PreparedStatement ps = con.prepareStatement(sql);
 	        ps.setString(1, usr.getUserName());
@@ -144,39 +145,81 @@ public class AdminDAO {
 		
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	//@@@@@@@@@@@@@@@@@@@@@@@
+	
+	/*public News selectNews(int id) {
+	    //News nws = null;
+	    
+	    //try (Connection con = dbConnection();
+	         PreparedStatement ps = con.prepareStatement("SELECT * FROM news WHERE id = ?")) {
+
+	        ps.setInt(1, id);
+	        ResultSet rs = ps.executeQuery();
+
+	        if (rs.next()) {
+	            String title = rs.getString("title");
+	            String content = rs.getString("content");
+	            String date = rs.getString("date");
+
+	            nws = new News(id, title, content, date);
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return nws;
+	}
+	*/
+	
+	//@@@@@@@@@@@@@@@@@@@@@@@
 
 	public User findUserById(int id) {
 		
-		//System.out.println("ZZZZZ"+id);
+		 System.out.println("IDIDIDIDIDID" + id);
+    	  User usr = null;
+    	  System.out.println("sagesage"+usr);
+	    
+	      try (Connection con = dbConnection();
+	         PreparedStatement ps = con.prepareStatement("SELECT * FROM userdetails WHERE userID = ?")) {
+
+	        ps.setInt(1, id);
+	        ResultSet rs = ps.executeQuery();
+
+	        if (rs.next()) {
+	        	
+	            String userName= rs.getString("userName");
+	            String email = rs.getString("email");
+	            String phoneNo = rs.getString("phoneNo");
+	            String password = rs.getString("password");
+	            String roll = rs.getString("roll");
+	            int age = rs.getInt("age");
+	            String gender = rs.getString("gender");
+	            
+	            usr = new User(id, userName, email, phoneNo, password, roll, age, gender);
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	      
+	    System.out.println("CCCCCCCCCCCCCCCCCCOOOOOO" + usr);  
+	    return usr;
+	}
+
+
+	public void updateUser(User uusr) {
 		
-		Connection con = dbConnection();
-		User currentUser = null;
-		int userID = id;
 		
-		 try (
-				
-		         PreparedStatement ps = con.prepareStatement("SELECT * FROM userDetails WHERE id = ?")) {
+		
+	}
+		
+	}
 
-		        ps.setInt(1, id);
-		        ResultSet rs = ps.executeQuery();
-
-		        if (rs.next()) {
-		            String userName = rs.getString("userName");
-		            String email = rs.getString("email");
-		            int age = rs.getInt("age");
-		            String gender = rs.getString("gender");
-		            String phoneNo = rs.getString("phoneNumber");
-		            String password = rs.getString("password");
-		            String roll = rs.getString("roll");
-
-		            currentUser = new User(userID, userName, email, phoneNo, password, roll, age, gender);
-		        }
-
-		    } catch (Exception e) {
-		        e.printStackTrace();
-		    }
-
-		    return currentUser;
-		}	
-
-}
