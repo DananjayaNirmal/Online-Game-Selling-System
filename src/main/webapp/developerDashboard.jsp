@@ -146,7 +146,7 @@
     
     <footer class = "bg-dark text-light py-5" >
 
-	<div class = "container">
+	<!--div class = "container">
 	
 	<div class = "row">
 	
@@ -194,11 +194,11 @@
   	© 2025 GameZone. All rights reserved.
 	</p>
 
-	</div>
+	</div-->
 
-	<!--p class="text-light text-center mt-2">
+	<p class="text-light text-center" style = "height:10px;;">
   	© 2025 GameZone. All rights reserved.
-	</p-->
+	</p>
 	
 	
 
