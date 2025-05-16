@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.gamezone.dao.AdminDAO;
 import com.gamezone.model.User;
 import com.gamezone.model.gameModel;
+import com.gamezone.util.PasswordUtil;
 
 import javax.servlet.RequestDispatcher;
 
@@ -125,6 +126,10 @@ public class AdminController extends HttpServlet {
 		String password = request.getParameter("upass");
 		String roll = request.getParameter("roll");
 		
+		String hashedPassword = PasswordUtil.hashPassword(password);
+		
+		password = hashedPassword;
+		
 		
 		User uusr = new User(userID, userName, email, phoneNo, password, roll, age, gender);
 		
@@ -177,8 +182,11 @@ public class AdminController extends HttpServlet {
 		int age = Integer.parseInt(request.getParameter("uage"));
 		String gender = request.getParameter("ugender");
 		
+		String hashedPassword = PasswordUtil.hashPassword(password);
 		
-		//System.out.println("this is the name: " + userName);
+		password = hashedPassword;
+		
+		System.out.println("this is the hashed pass: " + password);
 		
 		User usr = new User(userName, email, phoneNo, password, roll, age, gender);
 		dao.insertUser(usr);
@@ -200,6 +208,9 @@ public class AdminController extends HttpServlet {
 				rd.forward(request, response);
 		
 	}
+	
+	
+	
 
 	private void showAdminDashboard(HttpServletRequest request, HttpServletResponse response) {
 		
