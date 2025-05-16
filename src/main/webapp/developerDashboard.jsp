@@ -1,3 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    HttpSession sessio = request.getSession(false); // don't create a new session
+    if (session == null || session.getAttribute("user") == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+    // Optionally set timeout to 5 minutes (300 seconds)
+    session.setMaxInactiveInterval(60);
+%>
+
 <!DOCTYPE html> 
 <html>
 <head>
@@ -8,12 +19,12 @@
             margin: 0;
             display: flex;
             font-family: Arial, sans-serif;
-            background-color: #212121;  /* Dark background for the whole page */
-            color: #fff;  /* White text color */
+            background-color: #212121;
+            color: #fff;
         }
         .sidebar {
             width: 220px;
-            background-color: #000000;  /* Black sidebar */
+            background-color: #000000;
             height: 100vh;
             padding: 20px 0;
             color: #fff;
@@ -23,7 +34,7 @@
             width: 100%;
             padding: 14px;
             margin: 15px 0;
-            background-color: #333;  /* Darker button color */
+            background-color: #333;
             border: none;
             color: #fff;
             font-size: 16px;
@@ -33,16 +44,16 @@
             border-radius: 5px;
         }
         .sidebar button:hover {
-            background-color: #1abc9c;  /* Green hover effect */
+            background-color: #1abc9c;
             transition: background-color 0.3s ease;
         }
         .content {
             flex-grow: 1;
             padding: 20px;
-            background-color: #fff;  /* White background for content area */
-            color: #000;  /* Black text color for content */
-            border-radius: 10px;  /* Rounded corners for content */
-            margin-left: 20px;  /* Adding margin to separate content from sidebar */
+            background-color: #fff;
+            color: #000;
+            border-radius: 10px;
+            margin-left: 20px;
         }
         iframe {
             width: 100%;
@@ -53,15 +64,15 @@
         }
     </style>
 </head>
-<body>
+<body>  
     <div class="sidebar">
         <button onclick="loadContent('profileshortcut.jsp')">Profile</button>
         <button onclick="loadContent('uploadGame.jsp')">Upload Game</button>
-         <button onclick="loadContent('viewUploadedGamesServlet')">Uploaded Games</button>
+        <button onclick="loadContent('viewUploadedGamesServlet')">Uploaded Games</button>
         <button onclick="loadContent('viewApprovedGamesServlet')">Approved Games</button>
     </div>
     <div class="content">
-        <iframe id="contentFrame" name="contentFrame" src="profileshortcut.jsp"></iframe>  <!-- Default profile page -->
+        <iframe id="contentFrame" name="contentFrame" src="profileshortcut.jsp"></iframe>
     </div>
 
     <script>
