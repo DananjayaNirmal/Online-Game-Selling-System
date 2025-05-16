@@ -33,7 +33,6 @@ import com.gamezone.model.News;
 				throws ServletException, IOException {
 					
 					String path = request.getServletPath();
-					System.out.println(path);
 					
 					switch(path) {
 					
