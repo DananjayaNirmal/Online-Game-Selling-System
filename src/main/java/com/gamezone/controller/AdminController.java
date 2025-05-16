@@ -15,13 +15,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.gamezone.dao.AdminDAO;
 import com.gamezone.model.User;
-
+import com.gamezone.model.gameModel;
 
 import javax.servlet.RequestDispatcher;
 
 //@WebServlet("/")
 
-@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/showUsers", "/admin/addNewUser", "/admin/updateUserForm", "/admin/manageGames", "/admin/adminDashboard", "/admin/updateUser", "/admin/deleteUser"})
+@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/showUsers",
+		"/admin/addNewUser", "/admin/updateUserForm", "/admin/manageGames",
+		"/admin/adminDashboard", "/admin/updateUser", "/admin/deleteUser", "/admin/showGames"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -58,7 +60,11 @@ public class AdminController extends HttpServlet {
 					
 				case "/admin/deleteUser":
 					deleteUser(request, response);
-					break;			
+					break;		
+				
+				case "admin/showGames":
+					showListedGames(request, response);
+					break;	
 						
 					
 				}
@@ -67,6 +73,25 @@ public class AdminController extends HttpServlet {
 	
 	
 	
+	private void showListedGames(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 
+		List<gameModel> gameList = new ArrayList<>();
+		System.out.println("Games list start value: ");
+		
+		gameList = dao.getAllGames();
+		
+		System.out.println("Games" + gameList);
+		
+		request.setAttribute("gList", gameList);
+		RequestDispatcher rd = request.getRequestDispatcher("admin/showGames.jsp");
+		rd.forward(request, response);
+
+		
+	}
+
+
+
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 				

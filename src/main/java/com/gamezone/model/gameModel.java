@@ -20,7 +20,7 @@ public class gameModel {
         this.status = status;
     }
 
-    // Getter and Setter methods for each field
+  
     public int getgameID() {
         return gameID;
     }

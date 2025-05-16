@@ -14,6 +14,7 @@ import java.util.List;
 
 import com.gamezone.model.News;
 import com.gamezone.model.User;
+import com.gamezone.model.gameModel;
 
 //import com.gamezone.util.DBConnection;
 //import com.gamezone.model.Game;
@@ -260,6 +261,42 @@ public class AdminDAO {
 			e.printStackTrace();
 		}
 		
+	}
+
+
+	public List<gameModel> getAllGames() {
+		List<gameModel> gameList = new ArrayList<>();
+		Connection con = dbConnection();
+		
+		String query = "Select * From games";
+		
+		try {
+			PreparedStatement ps = con.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				int gameID = rs.getInt("gameID");
+				String gamename = rs.getString("gamename");
+				String gametype = rs.getString("gametype");
+				Double gameprice = rs.getDouble("gameprice");
+				String gameimagepath = rs.getString("gameimagepath");
+				String gamedescription = rs.getString("description");
+				String status= rs.getString("status");
+			
+				
+				gameList.add(new gameModel(gameID, gamename, gametype, gameprice, gameimagepath, gamedescription, status));
+				
+				System.out.println("check game list:" + gameList);
+			}
+			
+		}catch(Exception e){
+			
+			e.printStackTrace();
+			
+		}
+		
+		return gameList;
 	}
 	
 	

@@ -16,7 +16,7 @@
 
 
                 <li class="nav-item me-2 col">
-                    <a href = "#" class="nav-link text-light">Manage Games</a>
+                    <a href = "showGames" class="nav-link text-light">Manage Games</a>
                 </li>
 
                 <li class="nav-item me-2 col">
