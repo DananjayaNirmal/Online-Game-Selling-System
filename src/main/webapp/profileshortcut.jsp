@@ -92,8 +92,6 @@
     </style>
     <!-- Load Font Awesome for the profile icon -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
-    
 </head>
 <body>
 
@@ -122,6 +120,7 @@
     <div class="profile-buttons">
         <!-- Buttons to view and edit the profile -->
         <button onclick="location.href='viewProfile.jsp'">View Profile</button>
+        <button onclick="location.href='editProfile.jsp'">Edit Profile</button>
     </div>
 </div>
 

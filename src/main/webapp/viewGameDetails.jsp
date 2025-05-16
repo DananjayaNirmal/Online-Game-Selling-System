@@ -22,6 +22,7 @@
 
     <!-- Go Back Button -->
     <button onclick="window.history.back()">Go Back</button>
+    <button>Add to Cart</button>
 </div>
 
 <style>

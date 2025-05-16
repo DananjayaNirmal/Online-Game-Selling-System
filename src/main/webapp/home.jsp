@@ -111,7 +111,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href = "#" class="nav-link">Store</a>
+                    <a href = "store.jsp" class="nav-link">Store</a>
                 </li>
 
 
