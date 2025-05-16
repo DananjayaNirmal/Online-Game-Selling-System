@@ -54,6 +54,7 @@
     </style>
 </head>
 <body>
+    
     <div class="sidebar">
         <button onclick="loadContent('profileshortcut.jsp')">Profile</button>
         <button onclick="loadContent('uploadGame.jsp')">Upload Game</button>
@@ -69,5 +70,6 @@
             document.getElementById("contentFrame").src = page;
         }
     </script>
+   
 </body>
 </html>

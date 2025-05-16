@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,41 +8,43 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f1c2e;
-            color: #f5f6fa;
+            background-color: #0d1117; /* Darker body background */
+            color: #f0f6fc; /* Lighter text for better contrast */
         }
         .header {
-            background: linear-gradient(to right, #1abc9c, #3498db);
+            background-color: #161b22; /* Dark header */
             padding: 40px 20px;
             text-align: center;
+            border-bottom: 2px solid #21262d;
         }
         .header h1 {
             margin: 0;
             font-size: 48px;
-            color: #fff;
+            color: #58a6ff;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
         .header p {
             font-size: 18px;
-            color: #ecf0f1;
+            color: #8b949e;
             margin-top: 10px;
         }
         .content {
             max-width: 1000px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #1e2f47;
+            background-color: #161b22;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .content h2 {
-            color: #1abc9c;
+            color: #58a6ff;
             margin-bottom: 20px;
         }
         .content p {
             line-height: 1.8;
             font-size: 16px;
+            color: #c9d1d9;
             margin-bottom: 20px;
         }
         .features {
@@ -51,26 +53,32 @@
             justify-content: space-between;
         }
         .feature {
-            background-color: #273c59;
+            background-color: #21262d;
             padding: 20px;
             margin-top: 20px;
             border-radius: 8px;
             width: 48%;
             box-sizing: border-box;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
         .feature:hover {
             transform: translateY(-5px);
+            background-color: #30363d;
         }
         .feature h3 {
-            color: #f1c40f;
+            color: #f9d342;
             margin-bottom: 10px;
+        }
+        .feature p {
+            color: #adbac7;
         }
         .footer {
             text-align: center;
             padding: 20px;
             font-size: 14px;
-            color: #95a5a6;
+            color: #8b949e;
+            background-color: #0d1117;
+            border-top: 1px solid #21262d;
         }
         @media (max-width: 768px) {
             .feature {

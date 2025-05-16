@@ -120,7 +120,6 @@
     <div class="profile-buttons">
         <!-- Buttons to view and edit the profile -->
         <button onclick="location.href='viewProfile.jsp'">View Profile</button>
-        <button onclick="location.href='editProfile.jsp'">Edit Profile</button>
     </div>
 </div>
 
