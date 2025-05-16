@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html> 
 <html>
 <head>
@@ -10,12 +8,12 @@
             margin: 0;
             display: flex;
             font-family: Arial, sans-serif;
-            background-color: #212121;
-            color: #fff;
+            background-color: #212121;  /* Dark background for the whole page */
+            color: #fff;  /* White text color */
         }
         .sidebar {
             width: 220px;
-            background-color: #000000;
+            background-color: #000000;  /* Black sidebar */
             height: 100vh;
             padding: 20px 0;
             color: #fff;
@@ -25,7 +23,7 @@
             width: 100%;
             padding: 14px;
             margin: 15px 0;
-            background-color: #333;
+            background-color: #333;  /* Darker button color */
             border: none;
             color: #fff;
             font-size: 16px;
@@ -35,16 +33,16 @@
             border-radius: 5px;
         }
         .sidebar button:hover {
-            background-color: #1abc9c;
+            background-color: #1abc9c;  /* Green hover effect */
             transition: background-color 0.3s ease;
         }
         .content {
             flex-grow: 1;
             padding: 20px;
-            background-color: #fff;
-            color: #000;
-            border-radius: 10px;
-            margin-left: 20px;
+            background-color: #fff;  /* White background for content area */
+            color: #000;  /* Black text color for content */
+            border-radius: 10px;  /* Rounded corners for content */
+            margin-left: 20px;  /* Adding margin to separate content from sidebar */
         }
         iframe {
             width: 100%;
@@ -55,15 +53,15 @@
         }
     </style>
 </head>
-<body>  
+<body>
     <div class="sidebar">
         <button onclick="loadContent('profileshortcut.jsp')">Profile</button>
         <button onclick="loadContent('uploadGame.jsp')">Upload Game</button>
-        <button onclick="loadContent('viewUploadedGamesServlet')">Uploaded Games</button>
+         <button onclick="loadContent('viewUploadedGamesServlet')">Uploaded Games</button>
         <button onclick="loadContent('viewApprovedGamesServlet')">Approved Games</button>
     </div>
     <div class="content">
-        <iframe id="contentFrame" name="contentFrame" src="profileshortcut.jsp"></iframe>
+        <iframe id="contentFrame" name="contentFrame" src="profileshortcut.jsp"></iframe>  <!-- Default profile page -->
     </div>
 
     <script>

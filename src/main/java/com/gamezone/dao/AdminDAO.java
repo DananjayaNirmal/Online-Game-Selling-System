@@ -218,6 +218,29 @@ public class AdminDAO {
 	public void updateUser(User uusr) {
 		
 		
+		try {
+			 	 Connection con = dbConnection();
+				 String sql = "Update userdetails Set userName = ?, email = ?, age = ?, gender = ?, phoneNo = ?, password = ?, roll = ? Where userID = ?";
+		         PreparedStatement ps = con.prepareStatement(sql);
+
+		   
+		           ps.setString(1, uusr.getUserName());
+				   ps.setString(2, uusr.getEmail()); 
+				   ps.setInt(3, uusr.getAge()); 
+				   ps.setString(4, uusr.getGender());
+				   ps.setString(5, uusr.getPhoneNo());
+				   ps.setString(6, uusr.getPassword());
+				   ps.setString(7, uusr.getRoll());
+				   ps.setInt(8, uusr.getUserID());
+				  
+				  
+				   ps.executeUpdate();
+
+				   System.out.println("SageDAO: " + uusr.getUserName());
+		    } catch (Exception e) {
+		    	
+		        e.printStackTrace();
+		    }
 		
 	}
 		
