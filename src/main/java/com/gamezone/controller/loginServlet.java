@@ -1,12 +1,12 @@
 package com.gamezone.controller;
 
-import com.gamezone.dao.loginDao ;
-import java.io.IOException;
+import com.gamezone.dao.loginDao;
+import com.gamezone.model.userModel;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-
-import com.gamezone.model.userModel;
+import java.io.IOException;
 
 @WebServlet("/loginservlet")
 public class loginServlet extends HttpServlet {
@@ -22,31 +22,32 @@ public class loginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Get login details from request
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
 
-        // Validate user credentials and fetch the user object
         userModel user = loginDao.validateUser(userName, password);
 
         if (user != null) {
             HttpSession session = request.getSession();
-            session.setAttribute("user", user);  // Store the user object in session
+            session.setAttribute("user", user);
+            session.setMaxInactiveInterval(60); 
 
-            // Redirect based on role
-            if ("developer".equalsIgnoreCase(user.getRole())) {
+            // Role-based redirection
+            String role = user.getRole();
+            if ("developer".equalsIgnoreCase(role)) {
                 response.sendRedirect("developerDashboard.jsp?login=success");
-            } else if ("customer".equalsIgnoreCase(user.getRole())) {
+            } else if ("customer".equalsIgnoreCase(role)) {
                 response.sendRedirect("Customer/userDash.jsp?login=success");
-            } else if ("moderator".equalsIgnoreCase(user.getRole())) {
+            } else if ("moderator".equalsIgnoreCase(role)) {
                 response.sendRedirect("moderator/moderatorDashboard.jsp?login=success");
-            } else if ("admin".equalsIgnoreCase(user.getRole())) {
+            } else if ("admin".equalsIgnoreCase(role)) {
                 response.sendRedirect("admin/adminDashboard.jsp?login=success");
             } else {
-                response.sendRedirect("home.jsp?login=success");
+                // Default if no known role
+                response.sendRedirect("dashboard.jsp?login=success");
             }
         } else {
-            response.sendRedirect("login.jsp?error=1");  // Redirect to login with error message if credentials are incorrect
+            response.sendRedirect("login.jsp?error=invalid");
         }
     }
 }

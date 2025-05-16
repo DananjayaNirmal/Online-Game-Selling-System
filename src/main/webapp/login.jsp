@@ -1,5 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+    HttpSession sessio = request.getSession(false);
+    if (session != null && session.getAttribute("user") != null) {
+        session.setMaxInactiveInterval(60); // reset timeout
+        com.gamezone.model.userModel user = (com.gamezone.model.userModel) session.getAttribute("user");
+        String role = user.getRole();
+        if ("developer".equalsIgnoreCase(role)) {
+            response.sendRedirect("developerDashboard.jsp");
+        } else if ("customer".equalsIgnoreCase(role)) {
+            response.sendRedirect("Customer/userDash.jsp");
+        } else if ("moderator".equalsIgnoreCase(role)) {
+            response.sendRedirect("moderator/moderatorDashboard.jsp");
+        } else if ("admin".equalsIgnoreCase(role)) {
+            response.sendRedirect("admin/adminDashboard.jsp");
+        } else {
+            response.sendRedirect("dashboard.jsp");
+        }
+        return;
+    }
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,7 +165,7 @@
             </label>
 
             <button type="submit" class="login-btn">Login</button>
-        
+
             <div class="link-buttons">
                 <div class="link-row">
                     <span>Don’t have an account?</span>
@@ -156,34 +176,20 @@
 
         </form>
     </div>
-    
-    <%
-    if (request.getParameter("error") != null) {
+
+<%
+    String error = request.getParameter("error");
+    String login = request.getParameter("login");
+    if ("invalid".equals(error)) {
 %>
     <script>alert("Invalid credentials. Please try again.");</script>
 <%
-    } else if (request.getParameter("login") != null && request.getParameter("login").equals("success")) {
+    } else if ("success".equals(login)) {
 %>
     <script>alert("Login successful!");</script>
 <%
     }
 %>
-    
-    
-    <script>
-    
-    const urlParams = new URLSearchParams(window.location.search);
-    const error = urlParams.get("error");
-    const login = urlParams.get("login");
-
-    if (error === "invalid") {
-        alert("Login failed: Invalid credentials");
-    }
-
-    if (login === "success") {
-        alert("Login successful!");
-    }
-</script>
 
 </body>
 </html>
