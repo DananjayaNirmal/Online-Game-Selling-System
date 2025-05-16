@@ -102,6 +102,7 @@ public class AdminController extends HttpServlet {
 		
 		User uusr = new User(userID, userName, email, phoneNo, password, roll, age, gender);
 		
+		System.out.println("Sage name: " + userName);
 		dao.updateUser(uusr);
 		
 		response.sendRedirect("showUsers");
