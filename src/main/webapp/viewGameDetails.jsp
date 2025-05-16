@@ -8,7 +8,7 @@
     <% if (game != null) { %>
         <h2><%= game.getGamename() %></h2>
         <div class="image-box">
-            <img src="<%= game.getGameimagepath() %>" alt="Game Image">
+            <img height ="500" width ="1200" src="images/<%= game.getGameimagepath() %>" alt="Game Image">
         </div>
         <div class="details">
             <p><strong>Type:</strong> <%= game.getGametype() %></p>

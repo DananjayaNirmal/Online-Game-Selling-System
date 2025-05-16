@@ -103,7 +103,7 @@
                     String image = rs.getString("gameimagepath");
         %>
         <div class="game-card">
-            <img src="<%= image %>" alt="<%= name %>">
+            <img src="images/<%= image %>" alt="<%= name %>">
             <h3><%= name %></h3>
             <a class="view-btn" href="viewGameDetailsServlet?id=<%= gameID %>">View Details</a>
         </div>

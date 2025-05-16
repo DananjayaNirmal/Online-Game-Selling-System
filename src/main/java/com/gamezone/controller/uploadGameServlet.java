@@ -27,28 +27,26 @@ public class uploadGameServlet extends HttpServlet {
         String gametype = request.getParameter("gametype");
         double gameprice = Double.parseDouble(request.getParameter("gameprice"));
         String gamedescription = request.getParameter("gamedescription");
-        String status = request.getParameter("status"); // Always 'pending'
+        String status = request.getParameter("status"); // Expected to be 'pending'
 
         // Get the uploaded file part
         Part filePart = request.getPart("gameimage");
-        String fileName = getFileName(filePart);
+        String fileName = getFileName(filePart); // only filename
 
-        // Define the upload path
+        // Save uploaded file to 'uploads' directory on server
         String uploadPath = getServletContext().getRealPath("") + File.separator + "uploads";
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) uploadDir.mkdir();
 
-        // Save file to disk
         String filePath = uploadPath + File.separator + fileName;
-        filePart.write(filePath);
+        filePart.write(filePath); // save file to disk
 
-        // Create game model with the uploaded information
-        gameModel game = new gameModel(0, gamename, gametype, gameprice, filePath, gamedescription, status);
+        // ⬅️ Store only the file name, not the full file path, in the DB
+        gameModel game = new gameModel(0, gamename, gametype, gameprice, fileName, gamedescription, status);
 
-        // Insert game into the database
+        // Insert game into database
         boolean success = gameDao.insertGame(game);
 
-        // Response based on success or failure
         if (success) {
             response.getWriter().println("<script>alert('Game uploaded successfully!'); window.location='uploadGame.jsp';</script>");
         } else {
@@ -56,7 +54,7 @@ public class uploadGameServlet extends HttpServlet {
         }
     }
 
-    // Helper method to extract file name from Part header
+    // Helper to extract filename
     private String getFileName(Part part) {
         for (String content : part.getHeader("content-disposition").split(";")) {
             if (content.trim().startsWith("filename")) {
@@ -66,6 +64,3 @@ public class uploadGameServlet extends HttpServlet {
         return null;
     }
 }
-
-
-
