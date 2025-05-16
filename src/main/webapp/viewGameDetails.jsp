@@ -14,60 +14,86 @@
             <p><strong>Type:</strong> <%= game.getGametype() %></p>
             <p><strong>Price:</strong> $<%= game.getGameprice() %></p>
             <p><strong>Description:</strong> <%= game.getGamedescription() %></p>
-            
         </div>
     <% } else { %>
         <div class="error">Game details not available. Please try again.</div>
     <% } %>
 
-    <!-- Go Back Button -->
-    <button onclick="window.history.back()">Go Back</button>
-    <button>Add to Cart</button>
+    <!-- Buttons -->
+    <div class="button-group">
+        <button onclick="window.history.back()">Go Back</button>
+        <button>Add to Cart</button>
+    </div>
 </div>
 
 <style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
     .container {
         width: 80%;
-        margin: 20px auto;
-        padding: 20px;
+        margin: 30px auto;
+        padding: 30px;
         border-radius: 15px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.2);
-        background-color: white;
-        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
     }
+
     .image-box img {
         max-width: 100%;
-        border-radius: 10px;
-        margin-bottom: 20px;
+        border-radius: 12px;
+        margin-bottom: 25px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     }
-    .details {
-        margin-top: 20px;
-    }
+
     h2 {
-        color: #2e6da4;
-        margin-bottom: 15px;
-    }
-    p {
-        line-height: 1.6;
-        font-size: 16px;
-    }
-    .error {
-        color: red;
-        font-weight: bold;
-        font-size: 18px;
+        color: #ffa500;
+        margin-bottom: 20px;
         text-align: center;
+        font-size: 28px;
     }
+
+    .details {
+        font-size: 18px;
+        line-height: 1.7;
+        padding: 10px;
+    }
+
+    .details strong {
+        color: #90caf9;
+    }
+
+    .error {
+        color: #ff6b6b;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .button-group {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
     button {
-        padding: 10px 20px;
-        background-color: #1abc9c;
+        padding: 12px 24px;
+        background-color: #ff8c00;
         color: #fff;
         border: none;
         font-size: 16px;
         cursor: pointer;
-        border-radius: 5px;
-        margin-top: 20px;
+        border-radius: 8px;
+        transition: background-color 0.3s;
     }
+
     button:hover {
-        background-color: #16a085;
+        background-color: #ffa733;
     }
 </style>
