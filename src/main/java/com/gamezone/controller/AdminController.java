@@ -172,7 +172,7 @@ public class AdminController extends HttpServlet {
 	}
 	
 
-	private void addNewUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void addNewUser(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		String userName = request.getParameter("uname");
 		String email = request.getParameter("uemail");
@@ -182,8 +182,19 @@ public class AdminController extends HttpServlet {
 		int age = Integer.parseInt(request.getParameter("uage"));
 		String gender = request.getParameter("ugender");
 		
-		String hashedPassword = PasswordUtil.hashPassword(password);
+		//___validations_____________________________________________________
 		
+
+		if (password.length() < 9) {
+		    request.setAttribute("error", "Password must be 8 characters long");
+		    request.getRequestDispatcher("addNewUser.jsp").forward(request, response);
+		    return;
+		}
+
+		// ___validation end___________________________________________________
+
+		
+		String hashedPassword = PasswordUtil.hashPassword(password);
 		password = hashedPassword;
 		
 		System.out.println("this is the hashed pass: " + password);
