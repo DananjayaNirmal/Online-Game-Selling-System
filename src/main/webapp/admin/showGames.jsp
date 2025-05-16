@@ -42,6 +42,7 @@
 						<th>Game ID</th>
 						<th>Name</th>
 						<th>Type</th>
+						<th>Description</th>
 						<th>Status</th>
 					</tr>
 				</thead>
@@ -64,23 +65,15 @@
 							
 						</tr-->
 						
-						
-					<tr>
-						
-							<td>1</td>
-							<td>2</td>
-							<td>3</td>
-							<td>4</td>
-							
-							<td>	
 				
 					<c:forEach var="gList" items="${gList}"> 
 						<tr>
 						
 							<td><c:out value="${gList.gameID }"></c:out></td>
-							<td><c:out value="${gList.gamename }"></c:out></td>
-							<td><c:out value="${gList.gametype }"></c:out></td>
-							<td><c:out value="${gList.gameprice }"></c:out></td>
+							<td><c:out value="${gList.gameName }"></c:out></td>
+							<td><c:out value="${gList.gameType }"></c:out></td>
+							<td><c:out value="${gList.description }"></c:out></td>
+							<td><c:out value="${gList.status}"></c:out></td>
 							
 							<td>
 								<!--a href="update?id=<c:out value='${pts.id }'/>" class="btn btn-success btn-sm">Edit</a>

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 //import java.util.List;
 import java.util.List;
 
+import com.gamezone.model.Game;
 import com.gamezone.model.News;
 import com.gamezone.model.User;
 import com.gamezone.model.gameModel;
@@ -264,8 +265,8 @@ public class AdminDAO {
 	}
 
 
-	public List<gameModel> getAllGames() {
-		List<gameModel> gameList = new ArrayList<>();
+	public List<Game> getAllGames() {
+		List<Game> gameList = new ArrayList<>();
 		Connection con = dbConnection();
 		
 		String query = "Select * From games";
@@ -277,15 +278,15 @@ public class AdminDAO {
 			while(rs.next()) {
 				
 				int gameID = rs.getInt("gameID");
-				String gamename = rs.getString("gamename");
-				String gametype = rs.getString("gametype");
-				Double gameprice = rs.getDouble("gameprice");
-				String gameimagepath = rs.getString("gameimagepath");
-				String gamedescription = rs.getString("description");
+				String gameName = rs.getString("gamename");
+				String gameType = rs.getString("gametype");
+				Double gamePrice = rs.getDouble("gameprice");
+				String gameImagePath = rs.getString("gameimagepath");
+				String description = rs.getString("description");
 				String status= rs.getString("status");
 			
 				
-				gameList.add(new gameModel(gameID, gamename, gametype, gameprice, gameimagepath, gamedescription, status));
+				gameList.add(new Game(gameID, gameName, gameType, gamePrice, gameImagePath, description, status));
 				
 				System.out.println("check game list:" + gameList);
 			}
@@ -298,6 +299,7 @@ public class AdminDAO {
 		
 		return gameList;
 	}
+	
 	
 	
 		

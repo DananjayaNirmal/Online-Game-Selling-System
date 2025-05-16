@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.gamezone.dao.AdminDAO;
+import com.gamezone.model.Game;
 import com.gamezone.model.User;
 import com.gamezone.model.gameModel;
 import com.gamezone.util.PasswordUtil;
@@ -63,7 +64,7 @@ public class AdminController extends HttpServlet {
 					deleteUser(request, response);
 					break;		
 				
-				case "admin/showGames":
+				case "/admin/showGames":
 					showListedGames(request, response);
 					break;	
 						
@@ -76,7 +77,7 @@ public class AdminController extends HttpServlet {
 	
 	private void showListedGames(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 
-		List<gameModel> gameList = new ArrayList<>();
+		List<Game> gameList = new ArrayList<>();
 		System.out.println("Games list start value: ");
 		
 		gameList = dao.getAllGames();
@@ -84,11 +85,12 @@ public class AdminController extends HttpServlet {
 		System.out.println("Games" + gameList);
 		
 		request.setAttribute("gList", gameList);
-		RequestDispatcher rd = request.getRequestDispatcher("admin/showGames.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("showGames.jsp");
 		rd.forward(request, response);
 
 		
 	}
+
 
 
 
