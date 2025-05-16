@@ -69,9 +69,9 @@
 	<h5 class = "text-light">Change roll</h5>
 	<select class="form-select text-light bg-dark" aria-label="Default select example" name = "roll" class = "text-light">
 	 <option selected value="${cUser.roll}"></option>
-	 <option value="1">Admin</option>
-	 <option value="2">Customer</option>
-	 <option value="3">Moderator</option>
+	 <option value="Admin">Admin</option>
+	 <option value="Customer">Customer</option>
+	 <option value="Moderator">Moderator</option>
 	</select>
 	
 		

@@ -21,7 +21,7 @@ import javax.servlet.RequestDispatcher;
 
 //@WebServlet("/")
 
-@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/showUsers", "/admin/addNewUser", "/admin/updateUserForm", "/admin/manageGames", "/admin/adminDashboard", "/admin/updateUser"})
+@WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/showUsers", "/admin/addNewUser", "/admin/updateUserForm", "/admin/manageGames", "/admin/adminDashboard", "/admin/updateUser", "/admin/deleteUser"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -58,8 +58,7 @@ public class AdminController extends HttpServlet {
 					
 				case "/admin/deleteUser":
 					deleteUser(request, response);
-					break;	
-					
+					break;			
 						
 					
 				}
@@ -79,6 +78,8 @@ public class AdminController extends HttpServlet {
 					
 					updateUser(request, response);
 					break;
+					
+				
 						
 					
 				}
@@ -95,7 +96,7 @@ public class AdminController extends HttpServlet {
 		String email = request.getParameter("uemail");
 		int age = Integer.parseInt(request.getParameter("uage"));
 		String gender = request.getParameter("ugender");
-		String phoneNo = request.getParameter("phoneNo");
+		String phoneNo = request.getParameter("phoneno");
 		String password = request.getParameter("upass");
 		String roll = request.getParameter("roll");
 		
@@ -113,7 +114,14 @@ public class AdminController extends HttpServlet {
 
 
 
-	private void deleteUser(HttpServletRequest request, HttpServletResponse response) {
+	private void deleteUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		
+		int id = Integer.parseInt(request.getParameter("id"));
+		
+		dao.deleteUser(id);
+			
+		response.sendRedirect ("showUsers");
 		 
 		
 	}

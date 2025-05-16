@@ -243,6 +243,26 @@ public class AdminDAO {
 		    }
 		
 	}
+
+
+	public void deleteUser(int id) {
+		
+		try {
+			Connection con = dbConnection();
+			String query = "Delete From userdetails Where userID = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			
+			ps.setInt(1, id);
+			ps.executeUpdate();
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
 		
 	}
 

@@ -92,8 +92,9 @@
         </div>
     </div>
 
-
-	<jsp:include page="/templates/footerAdmin.jsp"/>
+	<div>
+	
+	</div>
 
 </body>
 </html>
