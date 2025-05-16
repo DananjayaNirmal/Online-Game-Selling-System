@@ -166,6 +166,7 @@ public class ModeratorDAO {
 	            String description = rs.getString("description");
 	            String date = rs.getString("date");
 
+	            System.out.println("ZZZZZZZZZZ" + email);
 	            flist.add(new Feedbacks(feedbackId, email, description, date));
 	        }
 

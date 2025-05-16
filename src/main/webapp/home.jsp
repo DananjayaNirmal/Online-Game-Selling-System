@@ -116,7 +116,7 @@
 
 
                 <li class="nav-item">
-                    <a href = "#" class="nav-link">News</a>
+                    <a href = "moderator/displayNews" class="nav-link">News</a>
                 </li>
 
                 <!--li class="nav-item">
@@ -131,8 +131,8 @@
                     </a>
                     <ul class="dropdown-menu">
                     	<li><a class="dropdown-item" href="aboutUs.jsp">About Us</a></li>
-                        <li><a class="dropdown-item" href="#">Contact Us</a></li>
-                        <li><a class="dropdown-item" href="#">Feedbacks</a></li>
+                        <!--li><a class="dropdown-item" href="#">Contact Us</a></li-->
+                        <li><a class="dropdown-item" href="moderator/giveFeedbacks.jsp">Feedbacks</a></li>
                         
                     </ul>
                 </li>
