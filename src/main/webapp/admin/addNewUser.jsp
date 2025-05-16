@@ -16,11 +16,6 @@
 </head>
 <body>
 	
-	<% String error = (String) request.getAttribute("error"); %>
-	<% if (error != null) { %>
-    <div style="color: red;"><%= error %></div>
-	<% } %>
-	
 
 	<main class=" container ms-auto col-5 px-5 py-4" style = "background-color:#212429;">
 	<p style = "margin-top:50px;"></p>
@@ -31,7 +26,7 @@
 	<div class = "form-group mb-2">
 	
 	<label class = "mb-2" style = "color:white;">User Name</label>
-	<input type = "text" name = "uname" class = "form-control border-secondary" style = "background-color:#212429;" required>
+	<input type = "text" name = "uname" class = "form-control border-secondary" style = "background-color:#212429; color:white;" required>
 	
 	</div>
 	
@@ -39,7 +34,7 @@
 	<div class = "form-group mb-2">
 	
 	<label class = "mb-2" style = "color:white;">E-mail</label>
-	<input type = "email" name = "uemail" class = "form-control border-secondary" style = "background-color:#212429;" required>
+	<input type = "email" name = "uemail" class = "form-control border-secondary" style = "background-color:#212429; color:white;" required>
 	
 	</div>
 	
@@ -49,22 +44,30 @@
 	
 	<div class = "form-group mb-2 col">
 	<label class = "mb-2" style = "color:white;">Password</label>
-	<input type = "text" name = "upass" class = "form-control border-secondary" style = "background-color:#212429;" required>
+	<input type = "text" name = "upass" class = "form-control border-secondary" style = "background-color:#212429; color:white;" required>
 	
 	</div>
 	
 	<div class = "form-group mb-4 col">
 	
 	<label class = "mb-2" style = "color:white;">Confirm password</label>
-	<input type = "text" name = "uconpass" class = "form-control border-secondary" style = "background-color:#212429;" required>
+	<input type = "text" name = "uconpass" class = "form-control border-secondary" style = "background-color:#212429; color:white;" required>
 	
 	</div>
 	
 	</div>
+	
+	
+	<% String error = (String) request.getAttribute("error"); %>
+	<% if (error != null) { %>
+    <div style="color: red;"><%= error %></div>
+	<% } %>
+	
+	
 	
 		<hr style = "margin-bottom:40px; margin-top:40px;">
 	
-	<select class="form-select" aria-label="Default select example" name = "roll" style = "color:white; background-color:#212429;">
+	<select class="form-select" aria-label="Default select example" name = "roll" style = "color:white; background-color:#212429; color:white;">
 	 <option selected>Update Roll</option>
 	 <option value="Admin">Admin</option>
 	 <option value="Customer">Customer</option>
@@ -76,14 +79,14 @@
 	<div class = "form-group mb-2">
 	
 	<label class = "mb-2" style = "color:white;">Age</label>
-	<input type = "text" name = "uage" class = "form-control border-secondary" style = "background-color:#212429;" required>
+	<input type = "text" name = "uage" class = "form-control border-secondary" style = "background-color:#212429; color:white;" required>
 	
 	</div>
 	
 	<div class = "form-group mb-2">
 	
 	<label class = "mb-2" style = "color:white;">Gender</label>
-	<input type = "text" name = "ugender" class = "form-control border-secondary" style = "background-color:#212429;" required>
+	<input type = "text" name = "ugender" class = "form-control border-secondary" style = "background-color:#212429; color:white;" required>
 	
 	</div>
 	
@@ -91,7 +94,7 @@
 	<div class = "form-group mb-4">
 	
 	<label class = "mb-2" style = "color:white;">Phone number</label>
-	<input type = "text" name = "phoneno" class = "form-control border-secondary" style = "background-color:#212429;" required>
+	<input type = "text" name = "phoneno" class = "form-control border-secondary" style = "background-color:#212429; color:white;" required>
 	
 	</div>
 	
