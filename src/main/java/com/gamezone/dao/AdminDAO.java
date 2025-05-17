@@ -3,6 +3,7 @@ package com.gamezone.dao;
 import java.sql.Connection;
 
 
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,11 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.gamezone.model.Game;
-import com.gamezone.model.News;
 import com.gamezone.model.User;
-import com.gamezone.model.gameModel;
 
-//import com.gamezone.util.DBConnection;
+import com.gamezone.util.DBConnection;
 //import com.gamezone.model.Game;
 
 public class AdminDAO {
@@ -267,7 +266,7 @@ public class AdminDAO {
 
 	public List<Game> getAllGames() {
 		List<Game> gameList = new ArrayList<>();
-		Connection con = dbConnection();
+		Connection con = DBConnection.getConnection();
 		
 		String query = "Select * From games";
 		
@@ -288,7 +287,7 @@ public class AdminDAO {
 				
 				gameList.add(new Game(gameID, gameName, gameType, gamePrice, gameImagePath, description, status));
 				
-				System.out.println("check game list:" + gameList);
+				//System.out.println("check game list:" + gameList);
 			}
 			
 		}catch(Exception e){
@@ -301,6 +300,15 @@ public class AdminDAO {
 	}
 	
 	
+	
+	
+	
+	
+	//_________________________________________________________________________________
+	
+
+	
+	//?________________________________________________________________________________
 	
 		
 	}

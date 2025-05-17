@@ -15,6 +15,11 @@
 
 </head>
 <body>
+
+	<% String error = (String) request.getAttribute("error"); %>
+	<% if (error != null) { %>
+    <div style="color: red;"><%= error %></div>
+	<% } %>
 	
 
 	<main class=" container ms-auto col-5 px-5 py-4" style = "background-color:#212429;">
@@ -56,12 +61,7 @@
 	</div>
 	
 	</div>
-	
-	
-	<% String error = (String) request.getAttribute("error"); %>
-	<% if (error != null) { %>
-    <div style="color: red;"><%= error %></div>
-	<% } %>
+
 	
 	
 	

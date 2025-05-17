@@ -4,6 +4,7 @@ import java.io.IOException;
 
 
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -115,7 +116,7 @@ public class AdminController extends HttpServlet {
 	
 	
 
-	private void updateUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void updateUser(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		 
 		
 		
@@ -127,6 +128,50 @@ public class AdminController extends HttpServlet {
 		String phoneNo = request.getParameter("phoneno");
 		String password = request.getParameter("upass");
 		String roll = request.getParameter("roll");
+		String confirmPassword = request.getParameter("uconpass");
+		
+		
+		//
+		
+		if (password.length() < 9) {
+		    request.setAttribute("error", "Password must be 8 characters long");
+		    request.getRequestDispatcher("addNewUser.jsp").forward(request, response);
+		    return;
+		}
+		
+
+		
+		if (email == null || !email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+		    request.setAttribute("error", "Invalid email format");
+		    request.getRequestDispatcher("addNewUser.jsp").forward(request, response);
+		    return;
+		}
+
+
+		
+		if (confirmPassword == null || !password.equals(confirmPassword)) {
+		    request.setAttribute("error", "Password and Confirm Password do not match");
+		    request.getRequestDispatcher("addNewUser.jsp").forward(request, response);
+		    return;
+		}
+		
+		if (phoneNo == null || !phoneNo.matches("\\d{10,15}")) {
+		    request.setAttribute("error", "Phone number must contain only digits (10 to 15 digits)");
+		    request.getRequestDispatcher("addNewUser.jsp").forward(request, response);
+		    return;
+		}
+
+		
+		if (age < 16) {
+		    request.setAttribute("error", "Age must be 16 or older");
+		    request.getRequestDispatcher("addNewUser.jsp").forward(request, response);
+		    return;
+		}
+
+		
+		
+		//
+		
 		
 		String hashedPassword = PasswordUtil.hashPassword(password);
 		
@@ -180,6 +225,7 @@ public class AdminController extends HttpServlet {
 		String email = request.getParameter("uemail");
 		String phoneNo = request.getParameter("phoneno");
 		String password = request.getParameter("upass");
+		String confirmPassword = request.getParameter("uconpass");
 		String roll = request.getParameter("roll");
 		int age = Integer.parseInt(request.getParameter("uage"));
 		String gender = request.getParameter("ugender");
@@ -192,6 +238,39 @@ public class AdminController extends HttpServlet {
 		    request.getRequestDispatcher("addNewUser.jsp").forward(request, response);
 		    return;
 		}
+		
+
+		
+		if (email == null || !email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+		    request.setAttribute("error", "Invalid email format");
+		    request.getRequestDispatcher("addNewUser.jsp").forward(request, response);
+		    return;
+		}
+
+
+		
+		if (confirmPassword == null || !password.equals(confirmPassword)) {
+		    request.setAttribute("error", "Password and Confirm Password do not match");
+		    request.getRequestDispatcher("addNewUser.jsp").forward(request, response);
+		    return;
+		}
+		
+		if (phoneNo == null || !phoneNo.matches("\\d{10,15}")) {
+		    request.setAttribute("error", "Phone number must contain only digits (10 to 15 digits)");
+		    request.getRequestDispatcher("addNewUser.jsp").forward(request, response);
+		    return;
+		}
+
+		
+		if (age < 16) {
+		    request.setAttribute("error", "Age must be 16 or older");
+		    request.getRequestDispatcher("addNewUser.jsp").forward(request, response);
+		    return;
+		}
+
+		
+		
+		
 
 		// ___validation end___________________________________________________
 
@@ -230,6 +309,8 @@ public class AdminController extends HttpServlet {
 		
 		
 	}
+	
+	
 
 	private void checkLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
