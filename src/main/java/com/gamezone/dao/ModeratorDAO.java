@@ -82,38 +82,99 @@ public class ModeratorDAO {
 	    }
 
 	    return nl;
-		
-		
 	}
+	
+	
+	public List<Feedbacks> getFeedbacks(String id) {
+	    List<Feedbacks> flist = new ArrayList<>();
 
-	public List<Feedbacks> getFeedbacks() {
+	    try {
+	        int convertedID = Integer.parseInt(id);
+	        Connection con = dbConnection();
+	        String query = "SELECT * FROM feedbacks WHERE feedbackId = ?";
+	        PreparedStatement ps = con.prepareStatement(query);
+	        ps.setInt(1, convertedID);
 
-		List<Feedbacks> flist = new ArrayList<>();
-		
-		String query = "SELECT * FROM feedbacks";
-
-	    try (Connection con = dbConnection()) {
-	        Statement stmt = con.createStatement();
-	        ResultSet rs = stmt.executeQuery(query);
+	        ResultSet rs = ps.executeQuery();
 
 	        while (rs.next()) {
 	            int feedbackId = rs.getInt("feedbackId");
 	            String email = rs.getString("email");
 	            String description = rs.getString("description");
-	            
 	            String date = rs.getString("date");
 
 	            flist.add(new Feedbacks(feedbackId, email, description, date));
 	        }
-	        
+
+	    } catch (NumberFormatException e) {
+	        System.out.println("Invalid ID format: " + id);
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
 
 	    return flist;
-		
 	}
+
+		
+	    /*public List<Feedbacks> getFeedbacks(String id) {
+	        List<Feedbacks> flist = new ArrayList<>();
+
+	        try {
+	            int convertedID = Integer.parseInt(id);
+	            Connection con = dbConnection.getConnection();
+	            String Query = "SELECT * FROM games WHERE feedbackId= ?";
+	            PreparedStatement ps = con.prepareStatement(query);
+	            ps.setInt(1, convertedID);
+
+	            ResultSet rs = ps.executeQuery();
+
+	            while (rs.next()) {
+	                int feedbackId = rs.getInt("feedbackId");
+		            String email = rs.getString("email");
+		            String description = rs.getString("description");
+		            String date = rs.getString("date");
+
+	         flist.add(new Feedbacks(feedbackId, email, description, date));
+		        }
+
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+
+	        return   flist;
+	    }
+	    
+	     
+	    
 	
+	}*/
+	
+	
+	 
+	public List<Feedbacks> getFeedbacks() {
+
+	    List<Feedbacks> flist = new ArrayList<>();
+	    String query = "SELECT * FROM feedbacks";
+
+	    try (Connection con = dbConnection();
+	         PreparedStatement ps = con.prepareStatement(query);
+	         ResultSet rs = ps.executeQuery()) {
+
+	        while (rs.next()) {
+	            int feedbackId = rs.getInt("feedbackId");
+	            String email = rs.getString("email");
+	            String description = rs.getString("description");
+	            String date = rs.getString("date");
+
+	            flist.add(new Feedbacks(feedbackId, email, description, date));
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return flist;
+	}
 	//___________________________________________Select old news need to be updated_______________________________________________________________________
 	
 	

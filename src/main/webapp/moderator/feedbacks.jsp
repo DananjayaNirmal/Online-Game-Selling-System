@@ -1,5 +1,5 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,22 +70,23 @@
 	 <h2> Feedbacks </h2>
 	 
 	 
-	<c:forEach var="feedbacklist" items="${feedbacklist}"> 
-
-    <div class="container" style = "margin-bottom:10px;">
-         
-            <div class="">
-                <h4 style = "color:#106cff;"><c:out value="${feedbacklist.feedbackId }"></c:out></h4>
-                <p><c:out value="${feedbacklist.email}"></c:out></p>
-                <p><c:out value="${feedbacklist.description }"></c:out></p>
-                <p><c:out value="${feedbacklist.date}"></c:out></p>
-                 
-                <a href="" style = "color:white; text-decoration:none; margin-right:2px; border:1px solid blue; padding:4px; background-color:#106cff;"> Forward to Admin </a>
-            </div>
-            
-    </div>
-    
-    </c:forEach>
+	<c:choose>
+    <c:when test="${empty feedbacklist}">
+      <p>No feedback found or attribute missing!</p>
+    </c:when>
+    <c:otherwise>
+      <p>Feedback count: ${fn:length(feedbacklist)}</p>
+      <c:forEach var="feedback" items="${feedbacklist}">
+        <div>
+          <h4>${feedback.feedbackId}</h4>
+          <p>${feedback.email}</p>
+          <p>${feedback.description}</p>
+          <p>${feedback.date}</p>
+        </div>
+        <hr/>
+      </c:forEach>
+    </c:otherwise>
+  </c:choose>
 
 </body>
 </html>

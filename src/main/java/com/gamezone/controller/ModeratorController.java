@@ -54,7 +54,7 @@ import com.gamezone.model.News;
 				}
 
 
-
+  // INSERT TO THE FEEDBACK
 
 		private void insertFeedbacks(HttpServletRequest request, HttpServletResponse response) throws IOException {
 			
