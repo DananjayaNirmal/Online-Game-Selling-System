@@ -26,7 +26,7 @@ import javax.servlet.RequestDispatcher;
 
 @WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/showUsers",
 		"/admin/addNewUser", "/admin/updateUserForm", "/admin/manageGames",
-		"/admin/adminDashboard", "/admin/updateUser", "/admin/deleteUser", "/admin/showGames"})
+		"/admin/adminDashboard", "/admin/updateUser", "/admin/deleteUser", "/admin/showGames", "/admin/approve"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -68,7 +68,10 @@ public class AdminController extends HttpServlet {
 				case "/admin/showGames":
 					showListedGames(request, response);
 					break;	
-						
+				
+				//case "/admin/approve":
+					//approveGames(request, response);
+					//break;	
 					
 				}
 			}
@@ -76,6 +79,18 @@ public class AdminController extends HttpServlet {
 	
 	
 	
+	//private void approveGames(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 
+		//int gameID = Integer.parseInt(request.getParameter("id"));
+		
+		//Game agame = dao.findGameById(gameID);
+		
+		
+	//}
+
+
+
+
 	private void showListedGames(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 
 		List<Game> gameList = new ArrayList<>();
@@ -141,11 +156,7 @@ public class AdminController extends HttpServlet {
 		
 
 		
-		if (email == null || !email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
-		    request.setAttribute("error", "Invalid email format");
-		    request.getRequestDispatcher("addNewUser.jsp").forward(request, response);
-		    return;
-		}
+		
 
 
 		

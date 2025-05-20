@@ -45,8 +45,8 @@
 
             <div class="navbar-text">
 
-                <button type="button" class="btn btn-dark btn-sm">Log in</button>
-                <button type="button" class="btn btn-primary btn-sm ms-2">Sign up</button> 
+                <button type="button" class="btn btn-primary btn-sm">Log out</button>
+                <!--button type="button" class="btn btn-primary btn-sm ms-2">Sign up</button--> 
 
             </div>
 

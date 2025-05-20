@@ -211,7 +211,7 @@ public class AdminDAO {
 	        e.printStackTrace();
 	    }
 	      
-	    System.out.println("CCCCCCCCCCCCCCCCCCOOOOOO" + usr);  
+	    System.out.println("CC" + usr);  
 	    return usr;
 	}
 
@@ -297,6 +297,12 @@ public class AdminDAO {
 		}
 		
 		return gameList;
+	}
+
+
+	public Game findGameById(int gameID) {
+		
+		return null;
 	}
 	
 	
