@@ -20,7 +20,7 @@ public class ModeratorDAO {
 		
 		String url = "jdbc:mysql://localhost:3306/hms";
 		String un = "root";
-		String pw = "root";
+		String pw = "12345";
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
