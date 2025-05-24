@@ -132,7 +132,7 @@
                     <ul class="dropdown-menu">
                     	<li><a class="dropdown-item" href="aboutUs.jsp">About Us</a></li>
                         <li><a class="dropdown-item" href="#">Contact Us</a></li>
-                        <li><a class="dropdown-item" href="#">Feedbacks</a></li>
+                        <li><a class="dropdown-item" href="moderator/giveFeedbacks.jsp">Give Feedbacks</a></li>
                         
                     </ul>
                 </li>

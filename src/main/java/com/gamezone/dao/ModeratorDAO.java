@@ -116,38 +116,11 @@ public class ModeratorDAO {
 	}
 
 		
-	    /*public List<Feedbacks> getFeedbacks(String id) {
-	        List<Feedbacks> flist = new ArrayList<>();
-
-	        try {
-	            int convertedID = Integer.parseInt(id);
-	            Connection con = dbConnection.getConnection();
-	            String Query = "SELECT * FROM games WHERE feedbackId= ?";
-	            PreparedStatement ps = con.prepareStatement(query);
-	            ps.setInt(1, convertedID);
-
-	            ResultSet rs = ps.executeQuery();
-
-	            while (rs.next()) {
-	                int feedbackId = rs.getInt("feedbackId");
-		            String email = rs.getString("email");
-		            String description = rs.getString("description");
-		            String date = rs.getString("date");
-
-	         flist.add(new Feedbacks(feedbackId, email, description, date));
-		        }
-
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	        }
-
-	        return   flist;
-	    }
+	 
+	 
 	    
 	     
 	    
-	
-	}*/
 	
 	
 	 
@@ -266,6 +239,11 @@ public class ModeratorDAO {
 	    }
 		
 	}
+	
+	
+	
+
+
 }
 
 

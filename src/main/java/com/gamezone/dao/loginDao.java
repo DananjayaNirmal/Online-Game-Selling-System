@@ -5,13 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.gamezone.model.userModel;
-import com.gamezone.util.DBConnection;
+import com.gamezone.util.DB_con_moderator;
 
 public class loginDao {
 
     public userModel validateUser(String userName, String password) {
-        String query = "SELECT * FROM users WHERE userName = ?";
-        try (Connection con = DBConnection.getConnection();
+        String query = "SELECT * FROM hms.users WHERE userName = ?";
+        try (Connection con = DB_con_moderator.getConnection();
              PreparedStatement ps = con.prepareStatement(query)) {
 
             ps.setString(1, userName);
