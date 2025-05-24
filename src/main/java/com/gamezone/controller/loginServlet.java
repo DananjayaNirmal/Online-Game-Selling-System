@@ -30,21 +30,26 @@ public class loginServlet extends HttpServlet {
         if (user != null) {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-            session.setMaxInactiveInterval(60); 
+            session.setMaxInactiveInterval(60); // Session timeout in seconds
 
             // Role-based redirection
             String role = user.getRole();
-            if ("developer".equalsIgnoreCase(role)) {
-                response.sendRedirect("developerDashboard.jsp?login=success");
-            } else if ("customer".equalsIgnoreCase(role)) {
-                response.sendRedirect("Customer/userDash.jsp?login=success");
-            } else if ("moderator".equalsIgnoreCase(role)) {
-                response.sendRedirect("moderator/moderatorDashboard.jsp?login=success");
-            } else if ("admin".equalsIgnoreCase(role)) {
-                response.sendRedirect("admin/adminDashboard.jsp?login=success");
-            } else {
-                // Default if no known role
-                response.sendRedirect("dashboard.jsp?login=success");
+            switch (role.toLowerCase()) {
+                case "developer":
+                    response.sendRedirect("developerDashboard.jsp?login=success");
+                    break;
+                case "customer":
+                    response.sendRedirect("Customer/userDash.jsp?login=success");
+                    break;
+                case "moderator":
+                    response.sendRedirect("moderator/moderatorDashboard.jsp?login=success");
+                    break;
+                case "admin":
+                    response.sendRedirect("admin/adminDashboard.jsp?login=success");
+                    break;
+                default:
+                    response.sendRedirect("dashboard.jsp?login=success");
+                    break;
             }
         } else {
             response.sendRedirect("login.jsp?error=invalid");

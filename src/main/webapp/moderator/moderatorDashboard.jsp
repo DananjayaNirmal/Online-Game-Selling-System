@@ -86,7 +86,8 @@
             </div>
             
             <div class="card-button">
-                <a href = "#" style = "text-decoration:none; color:white;"><i class="fa fa-pencil-square" aria-hidden="true"></i><br><span>Edit Profile</span></a>
+                <a href = "profile.jsp" style = "text-decoration:none; color:white;"><i class="fa fa-pencil-square" aria-hidden="true"></i><br><span>Edit Profile</span></a>
+               
             </div>
             
         </div>

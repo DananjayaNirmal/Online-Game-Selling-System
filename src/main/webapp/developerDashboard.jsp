@@ -6,7 +6,7 @@
         return;
     }
     // Optionally set timeout to 5 minutes (300 seconds)
-    session.setMaxInactiveInterval(60);
+    session.setMaxInactiveInterval(10);
 %>
 
 <!DOCTYPE html> 

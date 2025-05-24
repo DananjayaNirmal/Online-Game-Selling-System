@@ -3,7 +3,7 @@
 <%
     HttpSession sessio = request.getSession(false);
     if (session != null && session.getAttribute("user") != null) {
-        session.setMaxInactiveInterval(60); 
+        session.setMaxInactiveInterval(10); 
         com.gamezone.model.userModel user = (com.gamezone.model.userModel) session.getAttribute("user");
         String role = user.getRole();
         if ("developer".equalsIgnoreCase(role)) {

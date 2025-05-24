@@ -22,7 +22,7 @@ import com.gamezone.model.News;
 
 	//@WebServlet("/")
 
-	@WebServlet(urlPatterns = {"/moderator/manageNews", "/moderator/displayNews", "/moderator/feedbacks", "/moderator/showUpdateNews", "/giveFeedbacks", "/moderator/updateNews", "/moderator/deleteNews", "/moderator/giveFeedbacks"})
+	@WebServlet(urlPatterns = {"/moderator/manageNews", "/moderator/displayNews", "/moderator/feedbacks", "/moderator/showUpdateNews", "/giveFeedbacks", "/moderator/updateNews", "/moderator/deleteNews", "/moderator/giveFeedbacks","/moderator/NewsHome","/moderator/updateProfile"})
 
 	public class ModeratorController extends HttpServlet {
 		private static final long serialVersionUID = 1L;
@@ -48,6 +48,10 @@ import com.gamezone.model.News;
 					case "/moderator/giveFeedbacks":
 						insertFeedbacks(request, response);
 						break;	
+						
+					case "/moderator/NewsHome":
+						NewsHome(request, response);
+						break;		
 							
 						
 					}
@@ -56,7 +60,7 @@ import com.gamezone.model.News;
 
   // INSERT TO THE FEEDBACK
 
-		private void insertFeedbacks(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		private void insertFeedbacks(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 			
 			
 			String email = request.getParameter("email");
@@ -65,7 +69,17 @@ import com.gamezone.model.News;
 			LocalDate today = LocalDate.now();
 			String date = Date.valueOf(today).toString();
 
-			
+			 if (email == null || email.trim().isEmpty()) {
+			        request.setAttribute("error", "Email is required.");
+			        request.getRequestDispatcher("giveFeedbacks.jsp").forward(request, response);
+			        return;
+			    }
+
+			    if (description == null || description.trim().isEmpty()) {
+			        request.setAttribute("error", "Feedback description is required.");
+			        request.getRequestDispatcher("giveFeedbacks.jsp").forward(request, response);
+			        return;
+			    }
 			
 			Feedbacks fb = new Feedbacks(email, description, date);
 	
@@ -109,6 +123,12 @@ import com.gamezone.model.News;
 					case "/moderator/deleteNews":
 						deleteNews(request, response);
 						break;	
+						
+						
+					case "/moderator/NewsHome":
+						NewsHome(request, response);
+						break;		
+								
 						
 					}
 				}
@@ -191,6 +211,20 @@ import com.gamezone.model.News;
 			rd.forward(request, response);
 			
 		}
+		
+		private void NewsHome(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			
+			List<News> nl = new ArrayList<>();
+			
+			nl = dao.getStoredNews();
+			
+			request.setAttribute("newslist", nl);
+			RequestDispatcher rd = request.getRequestDispatcher("NewsHome.jsp");
+			rd.forward(request, response);
+			
+		}
+		
+		
 
 		private void createNews(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 			
@@ -202,7 +236,7 @@ import com.gamezone.model.News;
 
 			
 			if (title == null || title.trim().isEmpty()) {
-		        request.setAttribute("error", "Title is required.");
+		        request.setAttribute("error", "Title is required.");                        // validation for the title and content 
 		        request.getRequestDispatcher("manageNews.jsp").forward(request, response);
 		        return;
 		    }
@@ -215,7 +249,8 @@ import com.gamezone.model.News;
 			response.sendRedirect("manageNews.jsp");
 			
 		}
-
+		
+		
 		 
 		
 	}
