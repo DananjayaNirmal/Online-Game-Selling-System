@@ -556,7 +556,7 @@
 	</div>
 	<hr>
 	<p class="text-light fs-6">
-  	© 2025 danadana. All rights reserved.
+  	© 2025 GameZone. All rights reserved.
 	</p>
 
 	</div>
