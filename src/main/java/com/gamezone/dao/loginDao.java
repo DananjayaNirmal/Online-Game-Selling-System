@@ -1,17 +1,19 @@
 package com.gamezone.dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.gamezone.model.userModel;
-import com.gamezone.util.DB_con_moderator;
+//import com.gamezone.util.DB_con_moderator;
+import com.gamezone.util.DBConnection;
 
 public class loginDao {
 
     public userModel validateUser(String userName, String password) {
         String query = "SELECT * FROM hms.users WHERE userName = ?";
-        try (Connection con = DB_con_moderator.getConnection();
+        try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(query)) {
 
             ps.setString(1, userName);
