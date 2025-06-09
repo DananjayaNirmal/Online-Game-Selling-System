@@ -94,8 +94,8 @@ public class AdminDAO {
 		
 		List<User> userList = new ArrayList<>();
 		Connection con = dbConnection();
-		
-		String query = "Select * From UserDetails";
+
+		String query = "Select * From userdetails";
 		
 		try {
 			PreparedStatement ps = con.prepareStatement(query);
@@ -106,7 +106,7 @@ public class AdminDAO {
 				int userID = rs.getInt("userID");
 				String userName = rs.getString("userName");
 				String email = rs.getString("email");
-				String phoneNo = rs.getString("phoneNo");
+				String phoneNo = rs.getString("phoneNumber");
 				String password = rs.getString("password");
 				String roll = rs.getString("roll");
 				int age = rs.getInt("age");
@@ -129,7 +129,7 @@ public class AdminDAO {
 	public void insertUser(User usr) {
 		
 		try (Connection con = dbConnection()) {
-	        String sql = "INSERT INTO userDetails(userName, email, age, gender, phoneNo, password, roll) VALUES"
+	        String sql = "INSERT INTO userDetails(userName, email, age, gender, phoneNumber, password, roll) VALUES"
 	        		+ " (?, ?, ?, ?, ?, ?, ?)";
 	        PreparedStatement ps = con.prepareStatement(sql);
 	        ps.setString(1, usr.getUserName());
@@ -198,7 +198,7 @@ public class AdminDAO {
 	        	
 	            String userName= rs.getString("userName");
 	            String email = rs.getString("email");
-	            String phoneNo = rs.getString("phoneNo");
+	            String phoneNo = rs.getString("phoneNumber");
 	            String password = rs.getString("password");
 	            String roll = rs.getString("roll");
 	            int age = rs.getInt("age");
@@ -221,7 +221,7 @@ public class AdminDAO {
 		
 		try {
 			 	 Connection con = dbConnection();
-				 String sql = "Update userdetails Set userName = ?, email = ?, age = ?, gender = ?, phoneNo = ?, password = ?, roll = ? Where userID = ?";
+				 String sql = "Update userdetails Set userName = ?, email = ?, age = ?, gender = ?, phoneNumber = ?, password = ?, roll = ? Where userID = ?";
 		         PreparedStatement ps = con.prepareStatement(sql);
 
 		   
