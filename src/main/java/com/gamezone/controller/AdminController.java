@@ -69,9 +69,9 @@ public class AdminController extends HttpServlet {
 					showListedGames(request, response);
 					break;	
 				
-				//case "/admin/approve":
-					//approveGames(request, response);
-					//break;	
+				case "/admin/approve":
+					approveGames(request, response);
+					break;	
 					
 				}
 			}
@@ -79,14 +79,14 @@ public class AdminController extends HttpServlet {
 	
 	
 	
-	//private void approveGames(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 
-		//int gameID = Integer.parseInt(request.getParameter("id"));
+	private void approveGames(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 
+		int gameID = Integer.parseInt(request.getParameter("id"));
 		
-		//Game agame = dao.findGameById(gameID);
+		Game gm = dao.findGameById(gameID);
 		
 		
-	//}
+	}
 
 
 
@@ -297,7 +297,8 @@ public class AdminController extends HttpServlet {
 		response.sendRedirect("./showUsers");
 		
 	}
-
+	
+	
 	private void showUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
 				List<User> userList = new ArrayList<>();
