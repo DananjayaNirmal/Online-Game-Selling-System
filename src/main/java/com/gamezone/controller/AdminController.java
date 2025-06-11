@@ -26,7 +26,7 @@ import javax.servlet.RequestDispatcher;
 
 @WebServlet(urlPatterns = {"/admin/adminLogin", "/admin/showUsers",
 		"/admin/addNewUser", "/admin/updateUserForm", "/admin/manageGames",
-		"/admin/adminDashboard", "/admin/updateUser", "/admin/deleteUser", "/admin/showGames", "/admin/approve"})
+		"/admin/adminDashboard", "/admin/updateUser", "/admin/deleteUser", "/admin/showGames", "/admin/approve", "/admin/delete"})
 
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -73,22 +73,32 @@ public class AdminController extends HttpServlet {
 					approveGames(request, response);
 					break;	
 					
+				case "/admin/delete":
+					deleteGames(request, response);
+					break;	
+					
 				}
 			}
 	
-	
-	
-	
-	private void approveGames(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
-		int gameID = Integer.parseInt(request.getParameter("id"));
+
+	private void deleteGames(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		Game gm = dao.findGameById(gameID);
+		int id = Integer.parseInt(request.getParameter("id"));
 		
+		dao.deleteGame(id);
+			
+		response.sendRedirect ("showGames");
 		
 	}
 
 
+	private void approveGames(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		int id = Integer.parseInt(request.getParameter("id"));
+		dao.approveGame(id);	
+		response.sendRedirect ("showGames");
+		
+	}
 
 
 	private void showListedGames(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,9 +1,6 @@
 package com.gamezone.dao;
 
 import java.sql.Connection;
-
-
-
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,6 +14,7 @@ import com.gamezone.model.Game;
 import com.gamezone.model.User;
 
 import com.gamezone.util.DBConnection;
+import com.mysql.cj.xdevapi.Statement;
 //import com.gamezone.model.Game;
 
 public class AdminDAO {
@@ -300,11 +298,46 @@ public class AdminDAO {
 	}
 
 
-	public Game findGameById(int gameID) {
+	public void approveGame(int id) {
+
+		/*try {
+			//Connection con = dbConnection();
+			Connection con = DBConnection.getConnection();
+			String query = "Update games Set status = ? Where gameID = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			
+			ps.setString(1, "apt");
+			ps.setInt(2, id);
+			ps.executeUpdate();
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+		}*/
 		
-		return null;
-	}
 	
+
+	}
+
+
+	public void deleteGame(int id) {
+		
+		try {
+			//Connection con = dbConnection();
+			Connection con = DBConnection.getConnection();
+			String query = "Delete From games Where gameID = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			
+			ps.setInt(1, id);
+			ps.executeUpdate();
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+
 	
 	
 	
