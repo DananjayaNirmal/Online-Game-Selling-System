@@ -145,8 +145,8 @@
 
             <div class="navbar-text">
 
-                <button type="button" class="btn btn-dark btn-sm" onclick="window.location.href='login.jsp'" >Log in</button>
-                <button type="button" class="btn btn-primary btn-sm ms-2" onclick="window.location.href='register.jsp'">Sign up</button> 
+                <button type="button" class="btn btn-dark btn-sm" onclick="window.location.href='developer/login.jsp'" >Log in</button>
+                <button type="button" class="btn btn-primary btn-sm ms-2" onclick="window.location.href='developer/register.jsp'">Sign up</button> 
 
             </div>
 

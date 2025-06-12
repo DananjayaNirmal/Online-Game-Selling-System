@@ -1,4 +1,4 @@
-package com.gamezone.dao;
+/*package com.gamezone.dao;
 
 import java.sql.Connection;
 
@@ -42,4 +42,4 @@ public class loginDao {
         }
         return null;
     }
-}
+}*/

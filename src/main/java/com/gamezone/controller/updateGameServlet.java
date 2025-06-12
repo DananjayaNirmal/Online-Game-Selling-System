@@ -8,7 +8,7 @@ import com.gamezone.dao.gameDao;
 
 import java.io.IOException;
 
-@WebServlet("/updateGameServlet")
+@WebServlet("/developer/updateGameServlet")
 public class updateGameServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

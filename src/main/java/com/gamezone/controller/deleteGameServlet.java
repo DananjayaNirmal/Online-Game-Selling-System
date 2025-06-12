@@ -9,7 +9,7 @@ import com.gamezone.dao.gameDao;
 
 import java.io.IOException;
 
-@WebServlet("/deleteGameServlet")
+@WebServlet("/developer/deleteGameServlet")
 public class deleteGameServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

@@ -14,7 +14,7 @@ import com.gamezone.dao.customerService;
 import com.gamezone.model.CustomerModel;
 
 
-@WebServlet("/insertServlett")
+@WebServlet("/developer/insertServlett")
 public class insertServlett extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -44,7 +44,7 @@ public class insertServlett extends HttpServlet {
 		//value inside cus to service class using calling editProfileCustomer method then can send to DB  
 		    
 		//we are sending the data where we want to display using request Dispatcher
-		RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("developer/login.jsp");
 		dispatcher.forward(request, response);
 		
 		

@@ -139,7 +139,7 @@ public class profileServlet extends HttpServlet {
             session.setAttribute("user", user);
             response.sendRedirect(request.getContextPath() + "/moderator/dashboard.jsp");  // <-- redirect to dashboard page
         } else {
-            response.sendRedirect(request.getContextPath() + "/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/developer/login.jsp");
         }
     }
 }

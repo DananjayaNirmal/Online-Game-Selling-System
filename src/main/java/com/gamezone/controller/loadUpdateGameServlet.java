@@ -10,7 +10,7 @@ import com.gamezone.dao.gameDao;
 import com.gamezone.model.gameModel;
 
 
-@WebServlet("/loadUpdateGameServlet")
+@WebServlet("/developer/loadUpdateGameServlet")
 public class loadUpdateGameServlet extends HttpServlet {
  
 	private static final long serialVersionUID = 1L;

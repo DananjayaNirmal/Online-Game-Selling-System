@@ -1,5 +1,6 @@
 package com.gamezone.dao;
 import java.awt.Taskbar.State;
+
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import com.gamezone.model.CustomerModel;
 import com.gamezone.util.DBConnection;
 
 import com.gamezone.util.*;
-import cart.gameModel;
+import com.gamezone.cart.customer.gameModel;
 
 
 public class customerService {

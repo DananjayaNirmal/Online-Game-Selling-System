@@ -1,4 +1,4 @@
-package com.gamezone.controller;
+/*package com.gamezone.controller;
 
 import com.gamezone.dao.loginDao;
 import com.gamezone.model.userModel;
@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-@WebServlet("/loginservlet")
+@WebServlet("/developer/loginservlet")
 public class loginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private loginDao loginDao;
@@ -36,7 +36,7 @@ public class loginServlet extends HttpServlet {
             String role = user.getRole();
             switch (role.toLowerCase()) {
                 case "developer":
-                    response.sendRedirect("developerDashboard.jsp?login=success");
+                    response.sendRedirect("developer/developerDashboard.jsp?login=success");
                     break;
                 case "customer":
                     response.sendRedirect("Customer/userDash.jsp?login=success");
@@ -48,11 +48,11 @@ public class loginServlet extends HttpServlet {
                     response.sendRedirect("admin/adminDashboard.jsp?login=success");
                     break;
                 default:
-                    response.sendRedirect("dashboard.jsp?login=success");
+                    response.sendRedirect("developer/dashboard.jsp?login=success");
                     break;
             }
         } else {
             response.sendRedirect("login.jsp?error=invalid");
         }
     }
-}
+}*/

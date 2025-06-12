@@ -9,7 +9,7 @@ import com.gamezone.model.userModel;
 
 import java.io.IOException;
 
-@WebServlet("/registerServlet")
+@WebServlet("/developer/registerServlet")
 public class registerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -10,7 +10,7 @@ import javax.servlet.http.*;
 import com.gamezone.dao.gameDao;
 import com.gamezone.model.gameModel;
 
-@WebServlet("/viewGameDetailsServlet")
+@WebServlet("/developer/viewGameDetailsServlet")
 public class viewGameDetailsServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

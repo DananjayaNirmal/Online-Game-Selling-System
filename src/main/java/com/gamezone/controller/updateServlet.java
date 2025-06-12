@@ -13,7 +13,7 @@ import com.gamezone.dao.customerService;
 import com.gamezone.model.CustomerModel;
 
 
-@WebServlet("/updateServlet")
+@WebServlet("/developer/updateServlet")
 public class updateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
