@@ -4,16 +4,6 @@
 <html lang="en">
 <head>
 
-    <style>
-
-       /* body {
-        
-        padding: 2rem;
-        border-radius: 12px;
-        color: white;
-    }*/
-
-    </style>
 
   <style>
     .carousel-inner img {
@@ -130,8 +120,8 @@
                         More
                     </a>
                     <ul class="dropdown-menu">
-                    	<li><a class="dropdown-item" href="#">About Us</a></li>
-                        <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                    	<li><a class="dropdown-item" href="aboutUs.jsp">About Us</a></li>
+                        <!--li><a class="dropdown-item" href="#">Contact Us</a></li-->
                         <li><a class="dropdown-item" href="moderator/giveFeedbacks.jsp">Give Feedbacks</a></li>
                         
                     </ul>
@@ -161,7 +151,6 @@
        sed placeat quas ad eveniet, dolorum praesentium distinctio,
        repellat, architecto ipsa illo maiores aliquam 
        exercitationem cupiditate?
-
 
     </div-->
 
@@ -199,12 +188,12 @@
     
         </div>
       
-        <div style = "position: absolute; left: 75%; top:90%; color:white;">
+        <!--div style = "position: absolute; left: 75%; top:90%; color:white;">
 
             <h1 ><span><s style="color: gray;">50$</s></span>&nbsp;25$</h1>
             <button class = "btn btn-light btn-lg">Play Now</button>
 
-        </div>
+        </div-->
 
         <!--_______________________________________________________________________________________________-->
         

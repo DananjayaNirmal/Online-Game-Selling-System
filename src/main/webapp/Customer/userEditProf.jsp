@@ -73,10 +73,6 @@ input, select
 
  
  <div style="width: 60%; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; text-align: center; font-family: Arial, sans-serif;">
-
-      <!--    <h1>Hi, welcome to Customer's Dashboard!!</h1>
-         <h4>Share Profile</h4>
-		<a href="https://example.com/profile" target="_blank ">Share Profile</a><br><br>  </center>  -->
         
 		 <form action="EditProfCustomerServlet" method="post">
 <div style = "width:80%;">

@@ -57,23 +57,6 @@
 				</thead>
 				<tbody>
 				
-				
-					<!--tr>
-						
-							<td>1001</td>
-							<td>Dananjaya</td>
-							<td>dana@gmail.com</td>
-							<td>947027000</td>
-							<td>22</td>
-							<td>Admin</td>
-							<td>123456789</td>
-							<td>
-								<a href="" class="btn btn-transparent btn-sm"><i class="bi bi-pencil-square fs-5" style = "color:gray;"></i></a>
-								<a href="" class="btn btn-transparent btn-sm"><i class="bi bi-person-x-fill fs-5" style = "color:red;"></i></a>
-							</td>
-							
-						</tr-->
-				
 					<c:forEach var="usr" items="${usr}"> 
 					<c:if test="${usr.roll == 'Customer'}">
 						<tr>
@@ -92,8 +75,6 @@
 						<div style = "display:flex; justify-content: flex-end; gap: 8px; background-color:#f2f2f2;">
 						
 						
-								<!--a href="update?id=<c:out value='${pts.id }'/>" class="btn btn-success btn-sm">Edit</a>
-								<a href="delete?id=<c:out value='${pts.id }'/>" class="btn btn-danger btn-sm">Delete</a-->
 								<div>
 								<a href="updateUserForm?id=<c:out value='${usr.userID}'/>" class="btn btn-transparent btn-sm"><i class="bi bi-pencil-square fs-5" style = "color:gray;"></i></a>
 								</div>
@@ -118,7 +99,6 @@
 		
 		<H3>Staff Details</H3>
 		<br>
-		<!--a href="addNewUser.jsp" class="btn btn-success btn-sm"><i class="bi bi-person-plus-fill"></i> New staff member</a-->
 		
 	</div>
 	<br>

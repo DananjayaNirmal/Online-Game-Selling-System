@@ -6,21 +6,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.*, java.text.DecimalFormat" %>
 
-<%-- <%
-List<GameModel> games = null;
-try {
-    GameDao gameDao = new GameDao(DBconnection.getConnection());
-    games = gameDao.getAllGames();
-} catch (Exception e) {
-    e.printStackTrace();
-    out.println("Error fetching games: " + e.getMessage());
-}
-ArrayList<CartModel> cartList = (ArrayList<CartModel>) session.getAttribute("cart-list");
-if (cartList != null) {
-    request.setAttribute("cart_list", cartList);
-}
-%> --%>
-
 
 <% 
 List<GameModel> games = null;
@@ -170,92 +155,6 @@ if (auth != null) {
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<%-- <%@page import="com.gamezone.util.DBconnection"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="Models.UserModel, Models.OrderModel, Models.CartModel" %>
-<%@ page import="Dao.OrderDao, Dao.GameDao" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="java.util.*, java.text.DecimalFormat" %>
-<%@ page import="Models.GameModel" %>
-<% 
-List<GameModel> games = null;
-try {
-    GameDao gameDao = new GameDao(DBconnection.getConnection());
-    games = gameDao.getAllGames();
-} catch (Exception e) {
-    e.printStackTrace();
-    out.println("Error fetching games: " + e.getMessage());
-}
-ArrayList<CartModel> cartList = (ArrayList<CartModel>) session.getAttribute("cart-list");
-if (cartList != null) {
-    request.setAttribute("cart_list", cartList);
-}
-%>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome to GameZone</title>
-    <!-- Include your existing CSS/JS -->
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to GameZone!</h1>
-        <p>Click below to start exploring and adding games to your cart.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Game ID</th>
-                    <th>Game Name</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% if (games != null && !games.isEmpty()) { %>
-                    <% for (GameModel game : games) { %>
-                        <tr>
-                            <td><%= game.getGameId() %></td>
-                            <td><%= game.getGameName() %></td>
-                            <td><%= game.getCategory() %></td>
-                            <td>$<%= game.getPrice() %></td>
-                            <td>
-                                <a href="add-to-cart?id=<%= game.getGameId() %>">Add to Cart</a>
-                            </td>
-                        </tr>
-                    <% } %>
-                <% } else { %>
-                    <tr>
-                        <td colspan="5">No games available</td>
-                    </tr>
-                <% } %>
-            </tbody>
-        </table>
-        <a href="cart-display">View Cart</a>
-    </div>
-</body>
-</html> --%>
 
 
 

@@ -347,7 +347,6 @@ input, select {
         </td>
       </tr>
       
-      <!-- Add more rows as needed -->
     </tbody>
   </table>
 </div>

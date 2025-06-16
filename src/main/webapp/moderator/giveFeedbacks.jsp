@@ -8,7 +8,7 @@
   
   <style>
     body {
-      background-color:black;
+      background-color:#212429;
     }
 
     .feedback-container {

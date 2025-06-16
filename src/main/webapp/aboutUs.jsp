@@ -8,11 +8,11 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d1117; /* Darker body background */
-            color: #f0f6fc; /* Lighter text for better contrast */
+            background-color:#212429;
+            color: #f0f6fc; 
         }
         .header {
-            background-color: #161b22; /* Dark header */
+            background-color:#212429;
             padding: 40px 20px;
             text-align: center;
             border-bottom: 2px solid #21262d;
@@ -20,7 +20,7 @@
         .header h1 {
             margin: 0;
             font-size: 48px;
-            color: #58a6ff;
+            color:white;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -33,18 +33,18 @@
             max-width: 1000px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #161b22;
+            background-color:#1a1a1a;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .content h2 {
-            color: #58a6ff;
+            color: #0e6dfe;
             margin-bottom: 20px;
         }
         .content p {
             line-height: 1.8;
             font-size: 16px;
-            color: #c9d1d9;
+            color: white;
             margin-bottom: 20px;
         }
         .features {
@@ -66,19 +66,11 @@
             background-color: #30363d;
         }
         .feature h3 {
-            color: #f9d342;
+            color: #0e6dfes;
             margin-bottom: 10px;
         }
         .feature p {
-            color: #adbac7;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #8b949e;
-            background-color: #0d1117;
-            border-top: 1px solid #21262d;
+            color: white;
         }
         @media (max-width: 768px) {
             .feature {
@@ -127,9 +119,6 @@
     </div>
 </div>
 
-<div class="footer">
-    &copy; 2025 Game Zone. All rights reserved.
-</div>
 
 </body>
 </html>
