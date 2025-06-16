@@ -1,21 +1,13 @@
-Online-Game-Selling-System
-###
-OOP project year 2 semester 1
-###
-Group: 2025_S1_MLB_WE_18
-###
-###
+# Online-Game-Selling-System
 
-Used technologies :
-###
-JSP
-###
-Servlets
-###
-JS
-###
-CSS
-###
-Bootstrap
-###
-MYSQL
+> OOP Project - Year 2, Semester 1
+> Group: **2025\_S1\_MLB\_WE\_18**
+
+## Used Technologies
+
+* JSP
+* Servlets
+* JavaScript (JS)
+* CSS
+* Bootstrap
+* MySQL
