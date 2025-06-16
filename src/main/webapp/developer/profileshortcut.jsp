@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #001f3d, #000000); /* Dark blue to black gradient */
+            background:#141414;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -17,7 +17,7 @@
         }
 
         .profile-container {
-            background: linear-gradient(135deg, #003366, #000000); /* Dark blue to black gradient for inner container */
+            background:#1a1a1a;
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -36,7 +36,7 @@
             background-color: #f4f4f4;
             text-align: center;
             line-height: 150px;
-            border: 5px solid #800000; /* Added border around the image */
+            border: 5px solid #0971f7; /* Added border around the image */
             position: relative; /* Allow overlay on top */
         }
 
@@ -58,7 +58,7 @@
 
         .profile-picture i {
             font-size: 70px;
-            color: #800000;
+            color:#0971f7;
         }
 
         .profile-name {
@@ -77,7 +77,7 @@
         .profile-buttons button {
             padding: 12px 30px;
             margin: 10px 0;
-            background-color: #28a745;  /* Green button */
+            background-color:#333333;
             color: #fff;
             border: none;
             border-radius: 6px;
@@ -87,7 +87,7 @@
         }
 
         .profile-buttons button:hover {
-            background-color: #218838; /* Darker green on hover */
+            background-color:#0971f7;
         }
     </style>
     <!-- Load Font Awesome for the profile icon -->

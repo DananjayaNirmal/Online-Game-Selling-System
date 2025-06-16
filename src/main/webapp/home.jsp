@@ -111,7 +111,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href = "store.jsp" class="nav-link">Store</a>
+                    <a href = "#" class="nav-link">Store</a>
                 </li>
 
 
@@ -130,7 +130,7 @@
                         More
                     </a>
                     <ul class="dropdown-menu">
-                    	<li><a class="dropdown-item" href="aboutUs.jsp">About Us</a></li>
+                    	<li><a class="dropdown-item" href="#">About Us</a></li>
                         <li><a class="dropdown-item" href="#">Contact Us</a></li>
                         <li><a class="dropdown-item" href="moderator/giveFeedbacks.jsp">Give Feedbacks</a></li>
                         

@@ -1,8 +1,8 @@
 
 <%@page import="com.gamezone.util.DBConnection" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="Models.UserModel, Models.OrderModel, Models.CartModel, Models.GameModel" %>
-<%@ page import="Dao.OrderDao, Dao.GameDao" %>
+<%@ page import="com.gamezone.model.customer.UserModel, com.gamezone.model.customer.OrderModel, com.gamezone.model.customer.CartModel, com.gamezone.model.customer.GameModel" %>
+<%@ page import="com.gamezone.dao.customer.OrderDao, com.gamezone.dao.customer.GameDao" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.*, java.text.DecimalFormat" %>
 

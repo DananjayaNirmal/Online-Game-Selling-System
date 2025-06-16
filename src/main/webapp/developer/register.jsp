@@ -18,11 +18,11 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #800000, #4b0000);
+            background:#141414;
         }
 
         .form-container {
-            background: rgba(0, 0, 0, 0.7);
+            background:#212121;
             border-radius: 10px;
             padding: 20px 40px;
             width: 100%;
@@ -57,7 +57,7 @@
         }
 
         input[type="submit"] {
-            background-color: #800000;
+            background-color:#0b6ef8;
             color: #fff;
             border: none;
             cursor: pointer;
@@ -66,7 +66,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #b22222;
+            background-color:#0b6ef8;
         }
 
         .form-footer {

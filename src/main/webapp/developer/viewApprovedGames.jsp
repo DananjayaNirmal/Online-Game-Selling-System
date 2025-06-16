@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1c2b36;
+            background-color:#151515;
             color: white;
             margin: 0;
             padding: 0;
@@ -16,7 +16,7 @@
         .container {
             width: 90%;
             margin: 50px auto;
-            background-color: #2c3e50;
+            background-color:#212121;
             padding: 20px;
             border-radius: 8px;
         }
@@ -34,10 +34,10 @@
             border-bottom: 1px solid #444;
         }
         th {
-            background-color: #34495e;
+            background-color: #151515;
         }
         tr:hover {
-            background-color: #3a4a5f;
+            background-color:#151515f;
         }
         img {
             width: 100px;

@@ -2,8 +2,8 @@
 <%@page import="com.gamezone.model.CustomerModel"%>
 <%@page import="com.gamezone.util.DBConnection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="Models.UserModel, Models.OrderModel, Models.CartModel"%>
-<%@ page import="Dao.OrderDao, java.text.DecimalFormat, java.util.List, java.util.ArrayList"%>
+<%@ page import="com.gamezone.model.customer.UserModel, com.gamezone.model.customer.OrderModel, com.gamezone.model.customer.CartModel"%>
+<%@ page import="com.gamezone.dao.customer.OrderDao, java.text.DecimalFormat, java.util.List, java.util.ArrayList"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 

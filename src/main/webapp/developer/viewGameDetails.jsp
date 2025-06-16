@@ -52,7 +52,7 @@
     }
 
     h2 {
-        color: #ffa500;
+        color:white;
         margin-bottom: 20px;
         text-align: center;
         font-size: 28px;
@@ -65,7 +65,7 @@
     }
 
     .details strong {
-        color: #90caf9;
+        color:#0a6ffa;
     }
 
     .error {
@@ -84,7 +84,7 @@
 
     button {
         padding: 12px 24px;
-        background-color: #ff8c00;
+        background-color:#333333;
         color: #fff;
         border: none;
         font-size: 16px;
@@ -94,6 +94,6 @@
     }
 
     button:hover {
-        background-color: #ffa733;
+        background-color:#333333;
     }
 </style>

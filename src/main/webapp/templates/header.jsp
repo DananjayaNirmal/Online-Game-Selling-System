@@ -1,18 +1,18 @@
 
-    <nav class = "navbar navbar-expand navbar-dark" style = "background-color:#100f14">
+    <nav class = "navbar navbar-expand navbar-dark" style = "background-color:#212429;">
         
         <div class = "container">
 
-            <a href = "#" class="navbar-brand">GAME ZONE <i class="bi bi-fire"></i></a>
+            <a href = "../home.jsp" class="navbar-brand">GAME ZONE <i class="bi bi-fire"></i></a>
 
             <ul class="navbar-nav">
-                
-                <li class="nav-item">
-                    <a href = "#" class="nav-link">Home</a>
+            
+            	<li class="nav-item">
+                    <a href = "../home.jsp" class="nav-link">Home</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href = "#" class="nav-link">Store</a>
+                    <a href = "../home.jsp" class="nav-link">Store</a>
                 </li>
 
 
@@ -28,12 +28,12 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        About
+                        More
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">hehe</a></li>
-                        <li><a class="dropdown-item" href="#">hehe</a></li>
-                        <li><a class="dropdown-item" href="#">hehe</a></li>
+                        <li><a class="dropdown-item" href="#">About Us</a></li>
+                        <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                        <li><a class="dropdown-item" href="../moderator/giveFeedbacks.jsp">Give Feedbacks</a></li>
                     </ul>
                 </li>
 

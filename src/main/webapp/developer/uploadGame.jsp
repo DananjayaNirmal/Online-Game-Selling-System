@@ -6,7 +6,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1c2b36; /* Dark blue background */
+            background-color:#141414;
             color: white;
             margin: 0;
             padding: 0;
@@ -14,7 +14,7 @@
         .container {
             width: 50%;
             margin: 50px auto;
-            background-color: #2c3e50; /* Slightly lighter shade of blue for the container */
+            background-color:#212121;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
@@ -25,7 +25,7 @@
         }
         label {
             font-size: 16px;
-            color: #bdc3c7; /* Lighter label color for contrast */
+            color: #bdc3c7;
             margin-top: 10px;
             display: block;
         }
@@ -33,14 +33,14 @@
             width: 100%;
             padding: 10px;
             margin: 8px 0;
-            border: 1px solid #34495e;
+            border: 1px solid #333333;
             border-radius: 4px;
             box-sizing: border-box;
-            background-color: #34495e;
+            background-color:#333333;
             color: #ecf0f1;
         }
         input[type="submit"] {
-            background-color: #3498db;
+            background-color:#0970fb;
             color: white;
             padding: 12px 20px;
             border: none;
@@ -51,7 +51,7 @@
             margin-top: 20px;
         }
         input[type="submit"]:hover {
-            background-color: #2980b9;
+            background-color:#0970fb;
         }
     </style>
 </head>

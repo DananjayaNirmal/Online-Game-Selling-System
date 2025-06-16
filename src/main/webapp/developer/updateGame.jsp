@@ -6,7 +6,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1c2b36;
+            background-color: #141414;
             color: white;
             margin: 0;
             padding: 0;
@@ -14,7 +14,7 @@
         .container {
             width: 50%;
             margin: 50px auto;
-            background-color: #2c3e50;
+            background-color: #141414;
             padding: 20px;
             border-radius: 8px;
         }
@@ -30,23 +30,23 @@
             width: 100%;
             padding: 10px;
             margin-top: 5px;
-            background-color: #34495e;
+            background-color:#333333;
             border: 1px solid #7f8c8d;
             color: white;
             border-radius: 4px;
         }
         input[type="submit"] {
-            background-color: #3498db;
+            background-color:#0e6ef8;
             margin-top: 20px;
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: #2980b9;
+            background-color: #0e6ef8;
         }
         
             button {
         padding: 10px 20px;
-        background-color: #1abc9c;
+        background-color:#333333;
         color: #fff;
         border: none;
         font-size: 16px;
@@ -55,7 +55,7 @@
         margin-top: 20px;
     }
     button:hover {
-        background-color: #16a085;
+        background-color:#333333;
     }
         
     </style>

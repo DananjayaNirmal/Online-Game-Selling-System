@@ -22,7 +22,7 @@
 </head>
 <body>
 
-    <footer class = "text-light py-5" style = "background-color:#100f14" >
+    <footer class = "text-light py-5" style = "background-color:#212429;" >
 
 	<div class = "container">
 	

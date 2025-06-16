@@ -4,75 +4,6 @@
 <html>
 <head>
 
-<body style = "background: linear-gradient(135deg, #121212, #1f1f1f, #1a1a1a);  background-color: #FDFDFD;
- background-image: none;  ">
-
-    <nav class = "navbar navbar-expand navbar-dark bg-dark">
-        
-        <div class = "container">
-
-            <a href = "#" class="navbar-brand">Edit Profile</a>
-
-            <ul class="navbar-nav">
-                
-                <li class="nav-item">
-                    <a href = "#" class="nav-link">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href = "#" class="nav-link">Store</a>
-                </li>
-
-
-                <li class="nav-item">
-                    <a href = "#" class="nav-link">News</a>
-                </li>
-
-                <!--li class="nav-item">
-                    <a href = "#" class="nav-link">About</a>
-                </li-->
-
-                <!----------------------------------------------->
-
-              
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        More
-                    </a>
-                    <ul class="dropdown-menu">
-                    	<li><a class="dropdown-item" href="#">About Us</a></li>
-                        <li><a class="dropdown-item" href="#">Contact Us</a></li>
-                        <li><a class="dropdown-item" href="#">Feedbacks</a></li>
-                        
-                    </ul>
-                </li>
-                        
-                    
-
-                <!----------------------------------------------->
-                
-
-            </ul>
-
-
-            <div class="navbar-text">
-
-                <!--  <button type="button" class="btn btn-dark btn-sm">K.S.Diyana</button>   -->
-                
-                <text style="color: #FFFFFF; font-weight: bold;">K.S.Diyana</text>
-                <a href="home.jsp" type="button" class="btn btn-primary btn-sm ms-2">Log Out</a> 
-
-            </div>
-
-        </div> 
-        
-        </nav>   
-
-    
-</body>
-
-</nav>
-
 <meta charset="UTF-8">
 <title>Customer Edit Profile</title>
 
@@ -93,8 +24,8 @@ form
   display: inline-block;
   text-align: left;
   padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 10px;
+  width:80%;
 }
 
 h2 
@@ -148,7 +79,7 @@ input, select
 		<a href="https://example.com/profile" target="_blank ">Share Profile</a><br><br>  </center>  -->
         
 		 <form action="EditProfCustomerServlet" method="post">
-
+<div style = "width:80%;">
     <div class="section">
         <h3>Personal Information</h3>
 
@@ -217,12 +148,8 @@ input, select
             </div>	
         
      </div>
-   </div>  
-
-
-<jsp:include page="/templates/footer.jsp" />
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</div>     
+</div>  
 </body>
 </html>
 
